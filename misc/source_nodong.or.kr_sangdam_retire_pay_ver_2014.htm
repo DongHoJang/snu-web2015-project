@@ -1,0 +1,693 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0060)http://www.molab.go.kr/kr/oneclick/standard01/retire_cal.htm -->
+<HTML lang=ko xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>퇴직금 계산</TITLE>
+<META content="text/html; charset=ks_c_5601-1987" http-equiv=Content-Type>
+<SCRIPT language=javascript src="js\retire_util.js"></SCRIPT>
+<NOSCRIPT>
+<META name=GENERATOR content="MSHTML 8.00.6001.18812"></HEAD>
+<BODY onload=setCurrYear()>no script</NOSCRIPT>
+<SCRIPT language=JavaScript>
+var idx =0;
+
+function dateChk(){
+	var main = document.form1;
+
+	var syear = main.syear.value;
+	var smon  = main.smon.value;
+	var sday  = main.sday.value;
+
+	var eyear = main.eyear.value;
+	var emon  = main.emon.value;
+	var eday  = main.eday.value;
+
+	var revalue1 = fn_isYearMonthDay(syear, smon, sday);
+
+	//입사일자 유효성 체크
+	if(main.syear.value =='' || main.syear.value =='0' ||revalue1 == 1 ){
+		alert("입사년도가 적합하지 않습니다. 바르게 입력해 주십시오.");
+		main.syear.focus();
+		return false;
+	}
+	if(main.smon.value =='' || main.smon.value =='0' || revalue1 == 2){
+		alert("입사월이 적합하지 않습니다. 바르게 입력해 주십시오.");
+		main.smon.focus();
+		return false;
+	} 
+	if(main.sday.value =='' || main.sday.value =='0' || revalue1 == 3){
+		alert("입사일이 적합하지 않습니다. 바르게 입력해 주십시오.");
+		main.sday.focus();
+		return false;
+	}
+
+	var revalue2 = fn_isYearMonthDay(eyear, emon, eday);
+	//퇴사일자 유효성 체크
+	if(main.eyear.value =='' || main.eyear.value =='0' || revalue2 == 1){
+		alert("퇴사년도가 적합하지 않습니다. 바르게 입력해 주십시오.");
+		main.eyear.focus();
+		return false;
+	}
+	if(main.emon.value =='' || main.emon.value =='0' || revalue2 == 2){
+		alert("퇴사월이 적합하지 않습니다. 바르게 입력해 주십시오.");
+		main.emon.focus();
+		return false;
+	}
+	if(main.eday.value =='' || main.eday.value =='0' || revalue2 == 3){
+		alert("퇴사일이 적합하지 않습니다. 바르게 입력해 주십시오.");
+		main.eday.focus();
+		return false;
+	}
+	
+var symd1 = syear+fn_setFillzeroByVal(smon,2)+fn_setFillzeroByVal(sday,2);
+var eymd2 = eyear+fn_setFillzeroByVal(emon,2)+fn_setFillzeroByVal(eday,2);	
+
+	if(eval(symd1) >= eval(eymd2) ){
+		alert("퇴사일이 입사일 이전 입니다. 바르게 입력해 주십시오.");
+		main.syear.focus();
+		return false;
+	}
+
+	return true;
+}
+
+function setDate(){
+	var main = document.form1;
+
+	//입사 퇴사 일자체크
+	if(!dateChk()) return;
+
+	var syear = main.syear.value;
+	var smon  = main.smon.value;
+	var sday  = main.sday.value;
+
+	var eyear = main.eyear.value;
+	var emon  = main.emon.value;
+	var eday  = main.eday.value;
+
+	var sdate1 = main.syear.value+'/'+main.smon.value+'/'+main.sday.value;
+	var edate1 = main.eyear.value+'/'+main.emon.value+'/'+main.eday.value;
+
+	//재직일수 구하기
+	//var sDate = new Date(syear, smon,sday);     
+	//var eDate = new Date(eyear, emon,eday);   
+	//var termDays = Math.ceil((eDate-sDate)/24/60/60/1000);    //오늘날짜와 특정 날짜의 차를 구한다
+
+	var sDate = new Date(sdate1);
+	var eDate = new Date(edate1);  
+	var termDays = Math.ceil((eDate-sDate)/1000/60/60/24);    //오늘날짜와 특정 날짜의 차를 구한다
+	main.termDays.value = termDays;
+
+	var maxDay = fn_MaxdayYearMonth(eyear, emon); 
+
+	var yy;
+	var mm;  
+	var dd;
+	var dd2;
+	var cntday = 0;
+	var fymd;
+	var tymd;  
+	var sumday = 0;
+	var sumbasic = 0;
+	var sumbonus = 0;
+
+	if(eval(eday -1) == 0){   //1일이라면
+		emon = emon -1;
+		//eday = fn_MaxdayYearMonth(eyear, emon);   //전달 말일
+		idx = 3;
+		main.index_value.value = "3";
+	}else if(eval(eday -1) > 0){	// 5.31, 5.30
+		idx = 4;	
+		main.index_value.value = "4";
+	}    
+
+	if(idx == 3){
+		main.basic4.value = "0";
+		main.bonus4.value = "0";
+		main.basic4.disabled	= true;
+		main.bonus4.disabled	= true;
+		main.basic4.className	= "noinput";
+		main.bonus4.className	= "noinput";
+	}else if(idx ==4){
+		//main.basic4.value = "0";
+		//main.bonus4.value = "0";
+		main.basic4.disabled	= false;
+		main.bonus4.disabled	= false;
+		main.basic4.className	= "textfield";
+		main.bonus4.className	= "textfield";
+	}
+
+	for(i=1; i<idx+1 ; i++){
+
+		//년월 계산
+		if(eval(emon - idx + i) <= 0){
+			yy = eval(eyear -1);
+			mm =  12 + eval(emon - idx + i);
+			
+		}else{
+			yy = eyear ;
+			mm = eval(emon - idx) + i;              
+		}
+		
+		//일자 계산
+		if(idx == 3){
+			dd  = 1;
+			dd2 = fn_MaxdayYearMonth(yy,mm);
+		}else if(idx ==4){
+			if(i ==1){      
+				
+				if(eval(eday) > eval(fn_MaxdayYearMonth(yy,mm))){
+					dd = fn_MaxdayYearMonth(yy,mm) - eval(fn_MaxdayYearMonth(eyear,emon) - eval(eday));				
+				}else{
+					dd = eval(eday);
+				}
+				dd2 = fn_MaxdayYearMonth(yy,mm);
+			}else if(i ==2 || i ==3){
+				dd = 1;
+				dd2 = fn_MaxdayYearMonth(yy,mm);
+			}else if(i ==4){
+				dd = 1;
+				dd2 = eval(eday -1);
+			}
+		}    
+
+		//날짜 관련 화면셋팅
+		fymd = yy+"."+mm+"."+dd;
+		
+		if(dd2 != 0 && dd != dd2) {
+			tymd = "~ "+yy+"."+mm+"."+dd2;
+			var s = new Date(yy, mm,dd);     
+			var e = new Date(yy, mm,dd2);  
+			cntday = Math.ceil((e-s)/24/60/60/1000) +1;
+		}else{
+			tymd = "";            
+			cntday = 1;
+		}
+		
+		if(idx ==3 && i ==3){
+			main.elements['fymd4'].value = "";
+			main.elements['tymd4'].value = "";
+			main.elements['cntday4'].value = "";               
+		}
+		
+		sumday = eval(sumday + cntday);          
+
+		main.elements['fymd'+i].value = fymd;
+		main.elements['tymd'+i].value = tymd;
+		main.elements['cntday'+i].value = cntday;
+
+		//월별일수
+		main.elements['sumday'].value = sumday;                               
+	} 
+	
+	//기간이 바뀌면 기간별 금액도 바뀐다.
+	//main.sumbasic.value = 0 ;
+    //main.sumbonus.value = 0 ;  
+	main.control.value = "1";
+}	
+
+function sumPay(obj){   
+   
+	var main = document.form1;
+
+	if(main.control.value != "1"){
+		obj.value = "0";
+		alert("'재직일수와 평균임금기간 계산하기' 버튼을 눌러 주십시오");
+		return;
+	}
+	
+	var sumbasic = 0;
+	var sumbonus = 0;
+    for(j=1; j < idx+1; j++){
+        
+        sumbasic = sumbasic + parseInt(delCom(main.elements['basic'+j].value,main.elements['basic'+j].value.length));
+        sumbonus = sumbonus + parseInt(delCom(main.elements['bonus'+j].value, main.elements['bonus'+j].value.length));
+    }
+    
+    main.sumbasic.value = checkThousand(sumbasic+"", '0','N');
+    main.sumbonus.value = checkThousand(sumbonus+"", '0','N');  
+}
+        
+function avrPayCal(){
+
+	var main = document.form1;
+    //입사 퇴사 일자체크
+	if(!dateChk()) return;
+	
+	//평균임금계산 체크
+	if(main.control.value != "1"){
+		alert("'평균임금계산 기간보기' 버튼을 눌러 주십시오");
+		return;
+	}
+
+    var avrPay = 0;
+    var totalPay = 0;
+	var rounding = 0;
+    var annualBonus = 0;
+    var vacaBunus = 0;
+    var sumbasic = eval(delCom(main.sumbasic.value, main.sumbasic.value.length * 1));
+    var sumbonus = eval(delCom(main.sumbonus.value, main.sumbonus.value.length * 1));
+
+	if(main.sumbasic.value == "" || main.sumbasic.value == "0")	sumbasic =0;
+	if(main.sumbonus.value == "" || main.sumbonus.value == "0")	sumbonus =0;
+
+    //상여금 계산
+    annualBonus = eval(delCom(main.annualBonus.value,main.annualBonus.value.length) * 0.25);
+
+    //연차수당
+    vacaBunus = eval(delCom(main.vacaBunus.value, main.vacaBunus.value.length) * 0.25);
+
+    //총합
+    totalPay = eval(sumbasic + sumbonus + annualBonus + vacaBunus);
+
+    //임금총합이 0일때
+	if(main.avrPay.value == "" && totalPay == 0 ){
+		alert("임금총합이 0 입니다. 임금을 입력해 주십시오.");
+		return;
+	}
+	
+	//alert("기본급합parseInt=="+ eval(annualBonus + vacaBunus));
+    //alert("기본급합eval="+ eval(sumbasic + sumbonus));
+    //alert("기본급합="+ sumbasic + sumbonus);
+    //alert("합계액 ="+totalPay);
+    //alert("평균임금==>"+eval(totalPay /main.sumday.value));
+    //alert("세째자리반올림==>"+myRound(eval(totalPay /main.sumday.value), 2));
+
+    //소수 셋째 자리에서 반올림
+	rounding = myRound(eval(totalPay /main.sumday.value),2)+"";
+	
+	//금액 포멧만들어주기
+	if(rounding.indexOf(".") == -1){
+	}else{
+		var k = rounding.lastIndexOf(".");
+		var comFormat = checkThousand(rounding.substring(0, k), '0','N'); ;		
+		rounding = comFormat + rounding.substring(k, rounding.length)
+	}
+	//1일 평균임금. 
+    main.avrPay.value = rounding;
+	
+	//퇴직금은 ""로 셋팅
+	main.retirePay.value= "";
+}
+
+
+function calRet(){
+    var main = document.form1;
+	//입사 퇴사 일자체크
+	if(!dateChk()) return;
+
+    var retPay =0;
+	var rounding ;
+	var comPay = delCom(main.comPay.value, main.comPay.value.length);
+	var avrPay = delCom(main.avrPay.value, main.avrPay.value.length);
+	var calPay = delCom(main.avrPay.value, main.avrPay.value.length);	//기본은 평균값으로 
+
+    //평균임금이 입력되어 있는 지 계산
+	if(main.avrPay.value =="" || main.avrPay.value =="0"){
+		alert("1일 평균임금이 없습니다. '평균임금계산' 버튼을 눌러 계산하시거나 직접 입력해 주십시오");
+		return;
+	}
+
+	//평균임금계산 체크
+	if(main.control.value != "1"){
+		alert("'평균임금계산 기간보기' 버튼을 눌러 주십시오");
+		return;
+	}
+
+	//통상임금이 일일평균임금보다 클경우 통상임금이 일일평균임금임.
+	if(main.comPay.value != "" && main.comPay.value != "0"){
+		if(parseFloat(avrPay) < parseFloat(comPay)){
+			calPay = comPay;
+		}
+	}
+
+	retirePay = parseInt(calPay) * 30 * parseInt(main.termDays.value)/365; 
+	
+	//소수 셋째 자리에서 반올림
+	rounding = myRound(retirePay,2)+"";
+	
+	//금액 포멧만들어주기
+	if(rounding.indexOf(".") == -1){
+		rounding =checkThousand(rounding, '0','N'); ;	
+	}else{
+		var k = rounding.lastIndexOf(".");
+		var comFormat = checkThousand(rounding.substring(0, k), '0','N'); ;		
+		rounding = comFormat + rounding.substring(k, rounding.length)
+	}
+
+    main.retirePay.value= rounding;
+}
+
+function payreset(){
+	var main = document.form1;
+
+	main.basic1.value = "0";
+	main.basic2.value = "0";
+	main.basic3.value = "0";
+	main.basic4.value = "0";
+	main.bonus1.value = "0";
+	main.bonus2.value = "0";
+	main.bonus3.value = "0";
+	main.bonus4.value = "0";
+	main.sumbasic.value = "";
+	main.sumbonus.value = "";
+
+}
+
+function setCurrYear(){
+	var main = document.form1;
+	for(m =0; m<main.syear.options.length; m++){
+		if(main.syear.options[m].value == fn_getDateNowYear()){
+			main.syear.options[m].selected =true ;
+		}
+	}
+
+	for(n =0; n<main.eyear.options.length; n++){
+		if(main.eyear.options[n].value == fn_getDateNowYear()){
+			main.eyear.options[n].selected =true ;
+		}
+	}
+}
+
+function view_excel(){
+	var main = document.form1;
+	
+	if(main.retirePay.value == "" ){
+		alert("퇴직금 계산을 해주십시오.");
+		return;
+	}
+	
+	//top.location.href = "view_excel.jsp?fymd1="+main.fymd1.value;
+
+	main.target="_top";
+	main.action="http://www.molab.go.kr/kr/oneclick/standard01/view_excel.jsp";
+	main.submit();
+}
+</SCRIPT>
+<NOSCRIPT>no script</NOSCRIPT>
+<LINK rel=stylesheet type=text/css href="css\retire_nodong2014.css">
+<FORM name=form1><INPUT type=hidden name=control> <INPUT type=hidden name=index_value> 
+<DIV class=popup>
+<DIV class=content>
+<DIV class=CAPTION>▣ 1단계 : 재직기간과 평균임금 산정기간 계산</DIV>
+<DL class=search>
+  <DT><LABEL for=syear>입사일자:</LABEL></DT>
+  <DD><SELECT id=syear name=syear>
+  	<OPTION selected value=2016>2016</OPTION> 
+    <OPTION value=2015>2015</OPTION>  
+    <OPTION value=2014>2014</OPTION>  
+    <OPTION value=2013>2013</OPTION>  
+    <OPTION value=2012>2012</OPTION>  
+    <OPTION value=2011>2011</OPTION>     
+    <OPTION value=2010>2010</OPTION> 
+    <OPTION value=2009>2009</OPTION> 
+    <OPTION value=2008>2008</OPTION> 
+    <OPTION value=2007>2007</OPTION> 
+    <OPTION value=2006>2006</OPTION> 
+    <OPTION value=2005>2005</OPTION> 
+    <OPTION value=2004>2004</OPTION> 
+    <OPTION value=2003>2003</OPTION> 
+    <OPTION value=2002>2002</OPTION> 
+    <OPTION value=2001>2001</OPTION> 
+    <OPTION value=2000>2000</OPTION> 
+    <OPTION value=1999>1999</OPTION> 
+    <OPTION value=1998>1998</OPTION> 
+    <OPTION value=1997>1997</OPTION> 
+    <OPTION value=1996>1996</OPTION> 
+    <OPTION value=1995>1995</OPTION> 
+    <OPTION value=1994>1994</OPTION> 
+    <OPTION value=1993>1993</OPTION> 
+    <OPTION value=1992>1992</OPTION> 
+    <OPTION value=1991>1991</OPTION> 
+    <OPTION value=1990>1990</OPTION> 
+    <OPTION value=1989>1989</OPTION> 
+    <OPTION value=1988>1988</OPTION> 
+    <OPTION value=1987>1987</OPTION> 
+    <OPTION value=1986>1986</OPTION> 
+    <OPTION value=1985>1985</OPTION> 
+    <OPTION value=1984>1984</OPTION> 
+    <OPTION value=1983>1983</OPTION> 
+    <OPTION value=1982>1982</OPTION> 
+    <OPTION value=1981>1981</OPTION> 
+    <OPTION value=1980>1980</OPTION> 
+    <OPTION value=1979>1979</OPTION> 
+    <OPTION value=1978>1978</OPTION> 
+    <OPTION value=1977>1977</OPTION> 
+    <OPTION value=1976>1976</OPTION> 
+    <OPTION value=1975>1975</OPTION> 
+    <OPTION value=1974>1974</OPTION> 
+    <OPTION value=1973>1973</OPTION> 
+    <OPTION value=1972>1972</OPTION> 
+    <OPTION value=1971>1971</OPTION> 
+    <OPTION value=1970>1970</OPTION> 
+    <OPTION value=1969>1969</OPTION> 
+    <OPTION value=1968>1968</OPTION> 
+    <OPTION value=1967>1967</OPTION> 
+    <OPTION value=1966>1966</OPTION> 
+    <OPTION value=1965>1965</OPTION> 
+    <OPTION value=1964>1964</OPTION> 
+    <OPTION value=1963>1963</OPTION> 
+    <OPTION value=1962>1962</OPTION> 
+    <OPTION value=1961>1961</OPTION> 
+    <OPTION value=1960>1960</OPTION></SELECT> 년 
+    	<SELECT name=smon> 
+    <OPTION selected value=1>1</OPTION> 
+    <OPTION value=2>2</OPTION> 
+    <OPTION value=3>3</OPTION> 
+    <OPTION value=4>4</OPTION> 
+    <OPTION value=5>5</OPTION> 
+    <OPTION value=6>6</OPTION> 
+    <OPTION value=7>7</OPTION> 
+    <OPTION value=8>8</OPTION> 
+    <OPTION value=9>9</OPTION> 
+    <OPTION value=10>10</OPTION> 
+    <OPTION value=11>11</OPTION> 
+    <OPTION value=12>12</OPTION></SELECT> 월 
+    	<SELECT name=sday> 
+    <OPTION selected value=1>1</OPTION> 
+    <OPTION value=2>2</OPTION> 
+    <OPTION value=3>3</OPTION> 
+    <OPTION value=4>4</OPTION> 
+    <OPTION value=5>5</OPTION> 
+    <OPTION 
+    value=6>6</OPTION> 
+    <OPTION value=7>7</OPTION> 
+    <OPTION value=8>8</OPTION> 
+    <OPTION value=9>9</OPTION> 
+    <OPTION value=10>10</OPTION> 
+    <OPTION value=11>11</OPTION> 
+    <OPTION value=12>12</OPTION> 
+    <OPTION value=13>13</OPTION> 
+    <OPTION value=14>14</OPTION> 
+    <OPTION value=15>15</OPTION> 
+    <OPTION value=16>16</OPTION> 
+    <OPTION value=17>17</OPTION> 
+    <OPTION value=18>18</OPTION> 
+    <OPTION value=19>19</OPTION> 
+    <OPTION value=20>20</OPTION> 
+    <OPTION value=21>21</OPTION> 
+    <OPTION value=22>22</OPTION> 
+    <OPTION value=23>23</OPTION> 
+    <OPTION value=24>24</OPTION> 
+    <OPTION value=25>25</OPTION> 
+    <OPTION value=26>26</OPTION> 
+    <OPTION value=27>27</OPTION> 
+    <OPTION value=28>28</OPTION> 
+    <OPTION value=29>29</OPTION> 
+    <OPTION value=30>30</OPTION> 
+    <OPTION value=31>31</OPTION></SELECT> 일 </DD>
+  <DT><LABEL for=eyear>퇴직일자:</LABEL></DT>
+  <DD><SELECT id=eyear name=eyear> 
+  	<OPTION selected value=2016>2016</OPTION> 
+    <OPTION value=2015>2015</OPTION>  
+    <OPTION value=2014>2014</OPTION>  
+    <OPTION value=2013>2013</OPTION>  
+    <OPTION value=2012>2012</OPTION>  
+    <OPTION value=2011>2011</OPTION> 
+  	<OPTION value=2010>2010</OPTION> 
+    <OPTION value=2009>2009</OPTION>
+    <OPTION value=2008>2008</OPTION> 
+    <OPTION value=2007>2007</OPTION> 
+    <OPTION value=2006>2006</OPTION> 
+    <OPTION value=2005>2005</OPTION> 
+    <OPTION value=2004>2004</OPTION> 
+    <OPTION value=2003>2003</OPTION> 
+    <OPTION value=2002>2002</OPTION> 
+    <OPTION value=2001>2001</OPTION> 
+    <OPTION value=2000>2000</OPTION> 
+    <OPTION value=1999>1999</OPTION> 
+    <OPTION value=1998>1998</OPTION> 
+    <OPTION value=1997>1997</OPTION> 
+    <OPTION value=1996>1996</OPTION> 
+    <OPTION value=1995>1995</OPTION> 
+    <OPTION value=1994>1994</OPTION> 
+    <OPTION value=1993>1993</OPTION> 
+    <OPTION value=1992>1992</OPTION> 
+    <OPTION value=1991>1991</OPTION> 
+    <OPTION value=1990>1990</OPTION> 
+    <OPTION value=1989>1989</OPTION> 
+    <OPTION value=1988>1988</OPTION> 
+    <OPTION value=1987>1987</OPTION> 
+    <OPTION value=1986>1986</OPTION> 
+    <OPTION value=1985>1985</OPTION> 
+    <OPTION value=1984>1984</OPTION> 
+    <OPTION value=1983>1983</OPTION> 
+    <OPTION value=1982>1982</OPTION> 
+    <OPTION value=1981>1981</OPTION> 
+    <OPTION value=1980>1980</OPTION> 
+    <OPTION value=1979>1979</OPTION> 
+    <OPTION value=1978>1978</OPTION> 
+    <OPTION value=1977>1977</OPTION> 
+    <OPTION value=1976>1976</OPTION> 
+    <OPTION value=1975>1975</OPTION> 
+    <OPTION value=1974>1974</OPTION> 
+    <OPTION value=1973>1973</OPTION> 
+    <OPTION value=1972>1972</OPTION> 
+    <OPTION value=1971>1971</OPTION> 
+    <OPTION value=1970>1970</OPTION> 
+    <OPTION value=1969>1969</OPTION> 
+    <OPTION value=1968>1968</OPTION> 
+    <OPTION value=1967>1967</OPTION> 
+    <OPTION value=1966>1966</OPTION> 
+    <OPTION value=1965>1965</OPTION> 
+    <OPTION value=1964>1964</OPTION> 
+    <OPTION value=1963>1963</OPTION> 
+    <OPTION value=1962>1962</OPTION> 
+    <OPTION value=1961>1961</OPTION> 
+    <OPTION value=1960>1960</OPTION></SELECT> 년 
+  <SELECT name=emon> 
+  	<OPTION selected value=1>1</OPTION> 
+  	<OPTION value=2>2</OPTION> 
+    <OPTION value=3>3</OPTION> 
+    <OPTION value=4>4</OPTION> 
+    <OPTION value=5>5</OPTION> 
+    <OPTION value=6>6</OPTION> 
+    <OPTION value=7>7</OPTION> 
+    <OPTION value=8>8</OPTION> 
+    <OPTION value=9>9</OPTION> 
+    <OPTION value=10>10</OPTION> 
+    <OPTION value=11>11</OPTION> 
+    <OPTION value=12>12</OPTION></SELECT> 월 
+  <SELECT name=eday> 
+  	<OPTION selected value=1>1</OPTION> 
+  	<OPTION value=2>2</OPTION> 
+  	<OPTION value=3>3</OPTION> 
+    <OPTION value=4>4</OPTION> 
+    <OPTION value=5>5</OPTION> 
+    <OPTION value=6>6</OPTION> 
+    <OPTION value=7>7</OPTION> 
+    <OPTION value=8>8</OPTION> 
+    <OPTION value=9>9</OPTION> 
+    <OPTION value=10>10</OPTION> 
+    <OPTION value=11>11</OPTION> 
+    <OPTION value=12>12</OPTION> 
+    <OPTION value=13>13</OPTION> 
+    <OPTION value=14>14</OPTION> 
+    <OPTION value=15>15</OPTION> 
+    <OPTION value=16>16</OPTION> 
+    <OPTION value=17>17</OPTION> 
+    <OPTION value=18>18</OPTION> 
+    <OPTION value=19>19</OPTION> 
+    <OPTION value=20>20</OPTION> 
+    <OPTION value=21>21</OPTION> 
+    <OPTION value=22>22</OPTION> 
+    <OPTION value=23>23</OPTION> 
+    <OPTION value=24>24</OPTION> 
+    <OPTION value=25>25</OPTION> 
+    <OPTION value=26>26</OPTION> 
+    <OPTION value=27>27</OPTION> 
+    <OPTION value=28>28</OPTION> 
+    <OPTION value=29>29</OPTION> 
+    <OPTION value=30>30</OPTION> 
+    <OPTION value=31>31</OPTION></SELECT> 일 </DD>
+<br><br>
+  <DT>재직일수:</DT>
+  <DD><INPUT class=non1 readOnly size=7 type=text name=termDays> 일
+<script>
+function newWin(url,w,h) {
+window.open
+(url,'new_win','width='+w+',height='+h+',toolbars=no,menubars=no,scrollbars=yes');
+}
+</script>
+<SPAN class=btn3><INPUT title="클릭하면 평균임금계산 기간을 화면에 보여줍니다" onclick=javascript:setDate() value="재직일수와 평균임금 산정기간 계산하기" type=button></SPAN> 
+<SPAN class=btn3_1><a href=# onclick=newWin('http://www.nodong.or.kr/sangdam/retire_pay/tj_guide.htm',470,500)>퇴직일<img src="http://nodong.or.kr/pic/q_icon.gif" align="middle"></a></span>
+
+  </DD></DL>
+
+<TABLE summary="퇴직전 3개월 임금 총액 계산">
+  <CAPTION>▣ 2단계 : 최종 3개월 임금 계산</CAPTION>
+  <SPAN class=btn2><!----<INPUT title="3개월 임금을 0으로 초기화합니다" onclick=payreset() value=임금초기화 type=button>----></SPAN> 
+
+  <THEAD>
+  <TR>
+    <TH scope=col>기간</TH>
+    <TH scope=col>일수</TH>
+    <TH scope=col>기본급</TH>
+    <TH scope=col>기타수당</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD scope=row width=18%><INPUT class=non2 readOnly size=8 type=text name=fymd1><BR><INPUT class=non2 readOnly size=10 type=text name=tymd1></TD>
+    <TD class=right width=17%><INPUT class=non2 readOnly size=1 height=10 type=text name=cntday1>일</TD>
+    <TD width=32% align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '1','Y')" value=0 size=7 type=text name=basic1>원</TD>
+    <TD width=33% align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '2','Y')" value=0 size=7 type=text name=bonus1>원</TD></TR>
+      
+      
+  <TR>
+    <TD scope=row><INPUT class=non2 readOnly size=8 type=text name=fymd2><BR><INPUT class=non2 readOnly size=9 type=text name=tymd2> </TD>
+    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday2>일</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '3','Y')" value=0 size=7 type=text name=basic2>원</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '4','Y')" value=0 size=7 type=text name=bonus2>원</TD></TR>
+      
+      
+  <TR>
+    <TD scope=row><INPUT class=non2 readOnly size=8 type=text name=fymd3><BR><INPUT class=non2 readOnly size=9 type=text name=tymd3> </TD>
+    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday3>일</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '5','Y')" value=0 size=7 type=text name=basic3>원</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '6','Y')" value=0 size=7 type=text name=bonus3>원</TD></TR>
+      
+      
+  <TR>
+    <TD scope=row><INPUT class=non2 readOnly size=8 type=text name=fymd4><BR><INPUT class=non2 readOnly size=9 type=text name=tymd4></TD>
+    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday4>일</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '7','Y')" value=0 size=7 type=text name=basic4>원</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '8','Y')" value=0 size=7 type=text name=bonus4>원</TD></TR>
+
+
+  <TR class=end>
+    <TD scope=row>합계</TD>
+    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=sumday>일</TD>
+    <TD align=center><INPUT class=non2 readOnly size=8 type=text name=sumbasic>원</TD>
+    <TD align=center><INPUT class=non2 readOnly size=8 type=text name=sumbonus>원</TD></TR>
+
+    	</TBODY></TABLE>
+    	
+    	<SPAN class=btn11><INPUT title="3개월 임금을 0으로 초기화합니다" onclick=payreset() value=임금초기화 type=button></span>
+<DL>
+<DIV class=CAPTION>▣ 3단계 : 최종 1년간 상여금 &middot; 연차수당 계산</div>
+  <DT>연간상여금 총액 :</DT>
+  <DD><INPUT onblur='if(this.value ==""){ this.value ="0"}' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '9','Y')" value=0 size=8 type=text name=annualBonus>원&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class=text10>(퇴직일 이전 1년 이내)</span></DD>
+  <DT>연차수당 총액 : </DT>
+  <DD><INPUT onblur='if(this.value ==""){ this.value ="0"}' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '10','Y')" value=0 size=8 type=text name=vacaBunus>원&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class=text10>(퇴직일 이전 1년 이내)</span></DD>
+  </DL>
+
+
+
+<DL>
+<DIV class=CAPTION>▣ 4단계 : 평균임금과 퇴직금 계산 및 결과보기</DIV>
+	
+  <DT>1일 평균임금 : </DT>
+  <DD><INPUT onkeydown=fn_onKeyOnlyNumber() onkeyup="checkThousand(this.value, '11','Y')" size=10 type=text name=avrPay>원 
+  <SPAN class=btn1><INPUT title="클릭하면 평균임금계산 결과를 보여줍니다" onclick=javascript:avrPayCal() value="평균임금 계산하기" type=button></SPAN></DD>
+
+  <DT>1일 통상임금 : </DT>
+  <DD><INPUT onkeydown=fn_onKeyOnlyNumber() onkeyup="checkThousand(this.value, '12','Y')" size=10 type=text name=comPay>원</DD>
+
+  <DT>퇴직금 : </DT>
+  <DD><INPUT style="TEXT-ALIGN: right" readOnly size=15 type=text name=retirePay>원 <SPAN class=btn1><INPUT title="클릭하면 퇴직금계산 결과를 보여줍니다" onclick=javascript:calRet() value="퇴직금 계산하기" type=button></SPAN></DD>
+  <DT>퇴직금 계산 결과 보기: </DT>  
+  <DD><SPAN class=btn4><INPUT title="클릭하면 결과를 엑셀 파일로 볼 수 있습니다" onclick=javascript:view_excel() value="엑셀로 계산 내역서 받기" type=button></SPAN></DD>
+  
+</DL>
+* 1일 평균임금이 1일 통상임금보다 적으면, <b>1일 통상임금</b>으로 퇴직금을 계산해야 합니다.(근로기준법 제2조제2항) <a href=# onclick=newWin('http://www.nodong.or.kr/sangdam/retire_pay/tj_guide.htm',470,500)><img src="http://nodong.or.kr/pic/q_icon.gif" align="middle"></a>
+</DIV></DIV></FORM>
+
+
+</BODY></HTML>

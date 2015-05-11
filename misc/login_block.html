@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Include Fonts -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejugothic.css">
+        <link rel="stylesheet" href="css\general_font.css">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
-        rel="stylesheet" type="text/css">
+        type="text/css">
         <!-- Include Bootstrap theme -->
         <link rel="stylesheet" href="css\theme_cosmo\bootstrap.min.css">
         <!-- Include scripts -->
@@ -26,10 +27,10 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <a href="#" class="active" id="login-form-link">Login</a>
+                                    <a href="#" class="active" id="login-form-link">로그인</a>
                                 </div>
                                 <div class="col-xs-6">
-                                    <a href="#" id="register-form-link">Register</a>
+                                    <a href="#" id="register-form-link">회원가입</a>
                                 </div>
                             </div>
                             <hr>
@@ -54,7 +55,8 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
-                                                    <button type="submit" class="form-control btn btn-primary">Submit</button>
+                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4"
+                                                    class="form-control btn btn-login" value="로그인">
                                                 </div>
                                             </div>
                                         </div>
@@ -90,7 +92,7 @@
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
                                                     <input type="submit" name="register-submit" id="register-submit" tabindex="4"
-                                                    class="form-control btn btn-register" value="Register Now">
+                                                    class="form-control btn btn-register" value="회원 가입">
                                                 </div>
                                             </div>
                                         </div>
