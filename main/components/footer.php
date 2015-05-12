@@ -23,16 +23,16 @@
                     </p>
                     <div class="row">
                         <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
-                            <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
-                            <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                            <a href="http://www.moel.go.kr/"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                            <a href="http://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
                             <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
                             <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 hidden-xs text-right">
-                            <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
-                            <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                            <a href="http://www.moel.go.kr/"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                            <a href="http://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
                             <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
                             <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
                         </div>
