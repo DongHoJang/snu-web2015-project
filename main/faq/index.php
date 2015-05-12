@@ -3,7 +3,7 @@
 <head>
     <?php include $_SERVER["DOCUMENT_ROOT"]."/components/header.php" ?>
     <!-- additional header below -->
-    <link rel="stylesheet" href="faq/css/faqstyle.css">     <!-- 경로체크 -->
+    <link rel="stylesheet" href="css/faqstyle.css">     <!-- 경로체크 -->
 </head>
 
 <body>
