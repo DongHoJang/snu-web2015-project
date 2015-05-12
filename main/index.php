@@ -15,6 +15,11 @@
 
     <div class="section">
         <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12"></div>
+            </div>
+            
             <div class="row">
                 <div class="col-md-2"></div>
                 <a href="/rights">

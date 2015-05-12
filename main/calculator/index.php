@@ -5,7 +5,11 @@
     <!-- additional header below -->
     <title>퇴직금 계산</title>
     <script type="text/javascript" language="javascript" src="scripts/retire_util.js"></script>
-    <link href="/css/retire_chamgo.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" language="javascript" src="scripts/calculators.js"></script>
+    <link href="css/retire_chamgo.css" rel="stylesheet" type="text/css">
+    <link href="css/calc.css" rel="stylesheet" type="text/css">
+    
+
 </head>
 
 <body>

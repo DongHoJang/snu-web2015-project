@@ -6,7 +6,7 @@
     
 	<title>출근부</title>
 
-	<link rel="stylesheet" href="components/bootstrap3/css/bootstrap.min.css">
+<!--	<link rel="stylesheet" href="components/bootstrap3/css/bootstrap.min.css">-->
 <!--	<link rel="stylesheet" href="components/bootstrap3/css/bootstrap-theme.min.css">-->
 <!--    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
     
@@ -400,33 +400,7 @@
 		</div>
 		<div class="col-md-3">
 			<div class="row">
-				<select id="first_day" class="form-control">
-					<option value="" selected="selected">First day of week language-dependant</option>
-					<option value="2">First day of week is Sunday</option>
-					<option value="1">First day of week is Monday</option>
-				</select>
-				<select id="language" class="form-control">
-					<option value="">Select Language (default: en-US)</option>
-					<option value="bg-BG">Bulgarian</option>
-					<option value="nl-NL">Dutch</option>
-					<option value="fr-FR">French</option>
-					<option value="de-DE">German</option>
-					<option value="el-GR">Greek</option>
-					<option value="hu-HU">Hungarian</option>
-					<option value="id-ID">Bahasa Indonesia</option>
-					<option value="it-IT">Italian</option>
-					<option value="pl-PL">Polish</option>
-					<option value="pt-BR">Portuguese (Brazil)</option>
-					<option value="ro-RO">Romania</option>
-					<option value="es-CO">Spanish (Colombia)</option>
-					<option value="es-MX">Spanish (Mexico)</option>
-					<option value="es-ES">Spanish (Spain)</option>
-					<option value="ru-RU">Russian</option>
-					<option value="sk-SR">Slovak</option>
-					<option value="sv-SE">Swedish</option>
-					<option value="ko-KR">Korean</option>
-					<option value="zh-TW">繁體中文</option>
-				</select>
+				
 				<label class="checkbox">
 					<input type="checkbox" value="#events-modal" id="events-in-modal"> Open events in modal window
 				</label>

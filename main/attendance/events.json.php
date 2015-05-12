@@ -10,32 +10,16 @@
 			"end":   "1363197686300"
 		},
 		{
-			"id": "256",
-			"title": "Event that ends on timeline",
-			"url": "http://www.example.com/",
-			"class": "event-warning",
-			"start": "1363155300000",
-			"end":   "1363227600000"
-		},
-		{
 			"id": "276",
-			"title": "Short day event",
+			"title": "야간 알바 +2시간",
 			"url": "http://www.example.com/",
 			"class": "event-success",
 			"start": "1363245600000",
 			"end":   "1363252200000"
 		},
 		{
-			"id": "294",
-			"title": "This is information class ",
-			"url": "http://www.example.com/",
-			"class": "event-info",
-			"start": "1363111200000",
-			"end":   "1363284086400"
-		},
-		{
 			"id": "297",
-			"title": "This is success event",
+			"title": "추가 알바 시간 +2시간",
 			"url": "http://www.example.com/",
 			"class": "event-success",
 			"start": "1363234500000",
@@ -43,23 +27,15 @@
 		},
 		{
 			"id": "54",
-			"title": "This is simple event",
+			"title": "결근한 날",
 			"url": "http://www.example.com/",
 			"class": "",
 			"start": "1363712400000",
 			"end":   "1363716086400"
 		},
 		{
-			"id": "532",
-			"title": "This is inverse event",
-			"url": "http://www.example.com/",
-			"class": "event-inverse",
-			"start": "1364407200000",
-			"end":   "1364493686400"
-		},
-		{
 			"id": "548",
-			"title": "This is special event",
+			"title": "정기 출근 하루 6시간",
 			"url": "http://www.example.com/",
 			"class": "event-special",
 			"start": "1363197600000",
