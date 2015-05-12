@@ -1,4 +1,4 @@
-<body>
+
     <div class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -8,29 +8,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">알바권리</a>
+                <a class="navbar-brand" href="/"><img height="46" alt="brand" src="/components/logo.png"></a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                 <ul class="nav navbar-left navbar-nav">
                     <li>
-                        <a href="#">알바권리장전</a>
+                        <a href="/rights">알바권리장전</a>
                     </li>
                     <li>
-                        <a href="#">임금 계산기</a>
+                        <a href="/calculator">임금 계산기</a>
                     </li>
                     <li>
-                        <a href="#">출근부<br></a>
+                        <a href="/attendance">출근부<br></a>
                     </li>
                     <li>
-                        <a href="#">상담</a>
+                        <a href="/qna">상담</a>
                     </li>
                     <li>
-                        <a href="#">FAQ</a>
+                        <a href="/faq">FAQ</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">로그인<br></a>
+                        <a href="/login">로그인<br></a>
                     </li>
                 </ul>
             </div>

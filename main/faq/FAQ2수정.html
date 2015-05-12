@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Include Fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejugothic.css">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <!-- Include Bootstrap theme -->
+        <link rel="stylesheet" href="css\theme_cosmo\bootstrap.min.css">
+        <!-- Include scripts -->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>        
+
+<title>FAQ</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+
+
+<style type="text/css">
+    
+       @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+#faq {width: 800px; margin: 0; padding: 10px; border: 1px solid #ccc; list-style-type: none; font-size: 13px; font-family: 'Jeju Gothic', serif;}
+	#faq h2 {margin: 0; padding: 10px; font-size:20px; cursor: pointer;}
+	#faq h2.selected {color: #f72153; font-size:20px;}
+	#faq p {margin: 0; padding: 10px; border: 1px dotted #eee; color: #666; }
+</style>
+
+<script type="text/javascript">
+//<![CDATA[
+	// getElementsByClassName
+	function getElementsByClassName(clsName,parentNode) {
+		var arr = new Array();
+		if (parentNode == null) {
+			var elems = document.getElementsByTagName("*");
+		} else {
+			var elems = parentNode.getElementsByTagName("*");
+		}
+		for ( var cls, i = 0; ( elem = elems[i] ); i++ ) {
+			if ( elem.className == clsName ) {
+				arr[arr.length] = elem;
+			}
+		}
+		return arr;
+	}
+	function tabDisplay(tab,content,num,cls) {
+		for (var i=0; i<content.length; i++) {
+			tab[i].className = '';
+			tab[num].className = cls;
+			content[i].style.display = 'none';
+			content[num].style.display = 'block';
+		}
+	}
+	function tabAct(tab,content,num,cls) {
+		tab[num].onclick = function() {
+			tabDisplay(tab,content,num,cls);
+		}
+	}
+	window.onload = tabMenu;
+	function tabMenu() {
+		var faq = document.getElementById('faq'); // faq 전체를 감싸는 요소의 id
+		var q = getElementsByClassName('question',faq); // 질문 class
+		var a = getElementsByClassName('answer',faq); // 답변 class
+		var cls = 'selected'; // 선택된 탭의 class
+		for (var i=0; i<a.length; i++) {
+			tabDisplay(q,a,0,cls);
+			tabAct(q,a,i,cls);
+		}
+	}
+//]]>
+</script>
+
+</head>
+
+<body>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">BRAND<br></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                    <ul class="nav navbar-left navbar-nav">
+                        <li class="myc_navbar_item">
+                            <a href="#">알바권리장전</a>
+                        </li>
+                        <li>
+                            <a href="#">계산기</a>
+                        </li>
+                        <li>
+                            <a href="#">상담</a>
+                        </li>
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">출근부<br></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<div>
+<div align="center">
+
+<div class="main-container">
+  <h1> FAQ - 알바의 모든 것</h1> 
+  <section>
+    <button class="btn btn-green btn-border-rev">최저 임금</button>
+    <button class="btn btn-blue btn-border-rev">근로 시간</button>
+    <button class="btn btn-purple btn-border-rev">근로 계약</button>
+    <button class="btn btn-navy btn-border-rev">해고</button>
+    <button class="btn btn-orange btn-border-rev">임금 체불</button>
+    <button class="btn btn-red btn-border-rev">청소년</button>
+  </section>
+  <section>
+    
+</div>
+<ul id="faq">
+	<li>
+		<h2 class="question">01 최저임금이란?</h2>
+		<p class="answer">근로자가 사용자에게 제공한 근로의 대가로 근로자에게 지불하여야 할 최저수준의 임금입니다.
+		<br/> <br/>
+		2015년 적용 최저임금은 시간급 5580원 입니다. <br/>
+		<br/>
+		3개월 이내의 수습 근로자에게는 최저임금액의 10%를 감액하여 지급할 수 있습니다. <br/>다만, 근로계약 기간이 1년미만인 수습 사용근로자에 대해서는 최저 임금액을 감액할 수 없습니다.
+			<br/>
+		</p>
+	</li>	 <br/>
+	<li>
+		<h2 class="question">02 최저임금 미만을 지급받기로 한 근로계약은 유효한가요?</h2>
+		<p class="answer">사용자는 근로자에게 최저임금액 이상의 임금을 지급하여야 합니다. <br/>따라서 근로계약이 최저임금액에 미치지 못하는 금액을 임금으로 정하였다면 이렇게 정한 임금부분은 무효입니다.<br/> 무효로 된 임금부분에 대해서는 최저 임금액과 동일한 임금을 지급하여야 합니다.</p>
+	</li> <br/>
+		<li>
+		<h2 class="question">03 최저임금의 위반여부는 어떻게 판단하나요?</h2>
+		<p class="answer">1) 최저임금에 포함되는 임금 산정 <br/> 2) 시간당 임금으로 환산(=최저임금에 포함되는 임금/ 그 기간에 상응하는 임금산정 기준시간수 <br/> 3) 환산된 시간당 임금과 최저임금 비교 <br/> <br/>최저임금 위반여부 판단은 최저임금위원회 홈페이지<br/> (www.minimumwage.go.kr) <br/> '나의 임금과 최저임금 비교'를 참조하세요. </p>
+	</li> <br/>
+	<li>
+		<h2 class="question">04 사용자가 최저임금을 위반할 경우 어떤 처벌을 받게 되나요?</h2>
+		<p class="answer">사용자가 근로자에게 최저임금액보다 적은 임금을 지급한 경우에는<br/> 3년 이하의 징역 또는 2천만원 이하 벌금에 처해지거나, 이 두 가지 벌칙을 같이 받을 수 있습니다. <br/> 또한 근로자에게 최저임금액을 주지하지 않을 경우에는 100만원 이하의 과태료에 처해집니다.<br/></p>
+	</li> <br/>
+	<li>
+		<h2 class="question">05 사용자의 주지의무</h2>
+		<p class="answer">사용자는 최저임금액 등을 근로자가 쉽게 볼 수 있는 장소에 게시하거나 <br/>그 외 적당한 방법으로 근로자에게 널리 알려야합니다.<br/><br/>
+		*알려야할 내용 <br/>
+		최저임금액, 최저임금에 산입하지 아니하는 임금, 적용제외 근로자의 범위, 최저임금의 효력발생 연월일</p>
+	</li> <br/>
+	
+</ul>
+</div>
+
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="section section-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Footer header</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+                            <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                            <br>Ut enim ad minim veniam, quis nostrud</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-info text-right">
+                            <br>
+                            <br>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 hidden-xs text-right">
+                                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
