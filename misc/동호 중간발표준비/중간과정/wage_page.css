@@ -1,0 +1,66 @@
+.box{
+	width:180px;
+	height:180px;
+	margin-right: 10px;
+	background-color: pink;
+	
+}
+
+.box2{width:180px;
+	height:180px;
+	margin-left: 10px;
+	background-color: #99AACC;}
+
+
+.box:hover{-moz-box-shadow: 0 0 20px #ccc;
+-webkit-box-shadow: 0 0 20px #ccc;
+box-shadow: 0 0 10px #ccc;
+}
+
+.box2:hover{-moz-box-shadow: 0 0 20px #ccc;
+-webkit-box-shadow: 0 0 20px #ccc;
+box-shadow: 0 0 10px #ccc;
+background-color: #7755BB;}
+
+
+div{
+
+	padding:30px;
+	margin-top:300px;
+	margin-bottom:300px;
+/*	margin-left: auto;
+	margin-right: auto;*/
+	display: inline-table; 
+	width:180px;
+	height: 180px;
+	text-align: center;
+	
+
+}
+
+body{
+	text-align: center;
+	
+}
+
+div:hover{
+	width:200px;
+	height:200px;
+	-moz-box-shadow: 0 0 20px #ccc;
+	-webkit-box-shadow: 0 0 20px #ccc;
+	box-shadow: 0 0 10px #ccc;
+	background-color: #CC5599;}
+
+#retire_allowance{background-color: #CC5599;
+	margin-right:10px;
+/*margin:0px auto;*/}
+#total_calculation{background-color: #99AACC;
+	margin-left:10px;
+	/*margin:0px auto;*/
+}
+
+a{text-decoration: none;
+color:white;}
+a:hover{
+/*background-color: violet;*/
+color:gold;}

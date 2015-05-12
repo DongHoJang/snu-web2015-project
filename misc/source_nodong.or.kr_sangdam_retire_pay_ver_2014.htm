@@ -1,6 +1,7 @@
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <!-- saved from url=(0060)http://www.molab.go.kr/kr/oneclick/standard01/retire_cal.htm -->
-<HTML lang=ko xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>ÅğÁ÷±İ °è»ê</TITLE>
+<HTML lang=ko xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>í‡´ì§ê¸ˆ ê³„ì‚°</TITLE>
 <META content="text/html; charset=ks_c_5601-1987" http-equiv=Content-Type>
 <SCRIPT language=javascript src="js\retire_util.js"></SCRIPT>
 <NOSCRIPT>
@@ -22,37 +23,37 @@ function dateChk(){
 
 	var revalue1 = fn_isYearMonthDay(syear, smon, sday);
 
-	//ÀÔ»çÀÏÀÚ À¯È¿¼º Ã¼Å©
+	//ì…ì‚¬ì¼ì ìœ íš¨ì„± ì²´í¬
 	if(main.syear.value =='' || main.syear.value =='0' ||revalue1 == 1 ){
-		alert("ÀÔ»ç³âµµ°¡ ÀûÇÕÇÏÁö ¾Ê½À´Ï´Ù. ¹Ù¸£°Ô ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+		alert("ì…ì‚¬ë…„ë„ê°€ ì í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë°”ë¥´ê²Œ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 		main.syear.focus();
 		return false;
 	}
 	if(main.smon.value =='' || main.smon.value =='0' || revalue1 == 2){
-		alert("ÀÔ»ç¿ùÀÌ ÀûÇÕÇÏÁö ¾Ê½À´Ï´Ù. ¹Ù¸£°Ô ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+		alert("ì…ì‚¬ì›”ì´ ì í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë°”ë¥´ê²Œ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 		main.smon.focus();
 		return false;
 	} 
 	if(main.sday.value =='' || main.sday.value =='0' || revalue1 == 3){
-		alert("ÀÔ»çÀÏÀÌ ÀûÇÕÇÏÁö ¾Ê½À´Ï´Ù. ¹Ù¸£°Ô ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+		alert("ì…ì‚¬ì¼ì´ ì í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë°”ë¥´ê²Œ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 		main.sday.focus();
 		return false;
 	}
 
 	var revalue2 = fn_isYearMonthDay(eyear, emon, eday);
-	//Åğ»çÀÏÀÚ À¯È¿¼º Ã¼Å©
+	//í‡´ì‚¬ì¼ì ìœ íš¨ì„± ì²´í¬
 	if(main.eyear.value =='' || main.eyear.value =='0' || revalue2 == 1){
-		alert("Åğ»ç³âµµ°¡ ÀûÇÕÇÏÁö ¾Ê½À´Ï´Ù. ¹Ù¸£°Ô ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+		alert("í‡´ì‚¬ë…„ë„ê°€ ì í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë°”ë¥´ê²Œ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 		main.eyear.focus();
 		return false;
 	}
 	if(main.emon.value =='' || main.emon.value =='0' || revalue2 == 2){
-		alert("Åğ»ç¿ùÀÌ ÀûÇÕÇÏÁö ¾Ê½À´Ï´Ù. ¹Ù¸£°Ô ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+		alert("í‡´ì‚¬ì›”ì´ ì í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë°”ë¥´ê²Œ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 		main.emon.focus();
 		return false;
 	}
 	if(main.eday.value =='' || main.eday.value =='0' || revalue2 == 3){
-		alert("Åğ»çÀÏÀÌ ÀûÇÕÇÏÁö ¾Ê½À´Ï´Ù. ¹Ù¸£°Ô ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+		alert("í‡´ì‚¬ì¼ì´ ì í•©í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë°”ë¥´ê²Œ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 		main.eday.focus();
 		return false;
 	}
@@ -61,7 +62,7 @@ var symd1 = syear+fn_setFillzeroByVal(smon,2)+fn_setFillzeroByVal(sday,2);
 var eymd2 = eyear+fn_setFillzeroByVal(emon,2)+fn_setFillzeroByVal(eday,2);	
 
 	if(eval(symd1) >= eval(eymd2) ){
-		alert("Åğ»çÀÏÀÌ ÀÔ»çÀÏ ÀÌÀü ÀÔ´Ï´Ù. ¹Ù¸£°Ô ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+		alert("í‡´ì‚¬ì¼ì´ ì…ì‚¬ì¼ ì´ì „ ì…ë‹ˆë‹¤. ë°”ë¥´ê²Œ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 		main.syear.focus();
 		return false;
 	}
@@ -72,7 +73,7 @@ var eymd2 = eyear+fn_setFillzeroByVal(emon,2)+fn_setFillzeroByVal(eday,2);
 function setDate(){
 	var main = document.form1;
 
-	//ÀÔ»ç Åğ»ç ÀÏÀÚÃ¼Å©
+	//ì…ì‚¬ í‡´ì‚¬ ì¼ìì²´í¬
 	if(!dateChk()) return;
 
 	var syear = main.syear.value;
@@ -86,14 +87,14 @@ function setDate(){
 	var sdate1 = main.syear.value+'/'+main.smon.value+'/'+main.sday.value;
 	var edate1 = main.eyear.value+'/'+main.emon.value+'/'+main.eday.value;
 
-	//ÀçÁ÷ÀÏ¼ö ±¸ÇÏ±â
+	//ì¬ì§ì¼ìˆ˜ êµ¬í•˜ê¸°
 	//var sDate = new Date(syear, smon,sday);     
 	//var eDate = new Date(eyear, emon,eday);   
-	//var termDays = Math.ceil((eDate-sDate)/24/60/60/1000);    //¿À´Ã³¯Â¥¿Í Æ¯Á¤ ³¯Â¥ÀÇ Â÷¸¦ ±¸ÇÑ´Ù
+	//var termDays = Math.ceil((eDate-sDate)/24/60/60/1000);    //ì˜¤ëŠ˜ë‚ ì§œì™€ íŠ¹ì • ë‚ ì§œì˜ ì°¨ë¥¼ êµ¬í•œë‹¤
 
 	var sDate = new Date(sdate1);
 	var eDate = new Date(edate1);  
-	var termDays = Math.ceil((eDate-sDate)/1000/60/60/24);    //¿À´Ã³¯Â¥¿Í Æ¯Á¤ ³¯Â¥ÀÇ Â÷¸¦ ±¸ÇÑ´Ù
+	var termDays = Math.ceil((eDate-sDate)/1000/60/60/24);    //ì˜¤ëŠ˜ë‚ ì§œì™€ íŠ¹ì • ë‚ ì§œì˜ ì°¨ë¥¼ êµ¬í•œë‹¤
 	main.termDays.value = termDays;
 
 	var maxDay = fn_MaxdayYearMonth(eyear, emon); 
@@ -109,9 +110,9 @@ function setDate(){
 	var sumbasic = 0;
 	var sumbonus = 0;
 
-	if(eval(eday -1) == 0){   //1ÀÏÀÌ¶ó¸é
+	if(eval(eday -1) == 0){   //1ì¼ì´ë¼ë©´
 		emon = emon -1;
-		//eday = fn_MaxdayYearMonth(eyear, emon);   //Àü´Ş ¸»ÀÏ
+		//eday = fn_MaxdayYearMonth(eyear, emon);   //ì „ë‹¬ ë§ì¼
 		idx = 3;
 		main.index_value.value = "3";
 	}else if(eval(eday -1) > 0){	// 5.31, 5.30
@@ -137,7 +138,7 @@ function setDate(){
 
 	for(i=1; i<idx+1 ; i++){
 
-		//³â¿ù °è»ê
+		//ë…„ì›” ê³„ì‚°
 		if(eval(emon - idx + i) <= 0){
 			yy = eval(eyear -1);
 			mm =  12 + eval(emon - idx + i);
@@ -147,7 +148,7 @@ function setDate(){
 			mm = eval(emon - idx) + i;              
 		}
 		
-		//ÀÏÀÚ °è»ê
+		//ì¼ì ê³„ì‚°
 		if(idx == 3){
 			dd  = 1;
 			dd2 = fn_MaxdayYearMonth(yy,mm);
@@ -169,7 +170,7 @@ function setDate(){
 			}
 		}    
 
-		//³¯Â¥ °ü·Ã È­¸é¼ÂÆÃ
+		//ë‚ ì§œ ê´€ë ¨ í™”ë©´ì…‹íŒ…
 		fymd = yy+"."+mm+"."+dd;
 		
 		if(dd2 != 0 && dd != dd2) {
@@ -194,11 +195,11 @@ function setDate(){
 		main.elements['tymd'+i].value = tymd;
 		main.elements['cntday'+i].value = cntday;
 
-		//¿ùº°ÀÏ¼ö
+		//ì›”ë³„ì¼ìˆ˜
 		main.elements['sumday'].value = sumday;                               
 	} 
 	
-	//±â°£ÀÌ ¹Ù²î¸é ±â°£º° ±İ¾×µµ ¹Ù²ï´Ù.
+	//ê¸°ê°„ì´ ë°”ë€Œë©´ ê¸°ê°„ë³„ ê¸ˆì•¡ë„ ë°”ë€ë‹¤.
 	//main.sumbasic.value = 0 ;
     //main.sumbonus.value = 0 ;  
 	main.control.value = "1";
@@ -210,7 +211,7 @@ function sumPay(obj){
 
 	if(main.control.value != "1"){
 		obj.value = "0";
-		alert("'ÀçÁ÷ÀÏ¼ö¿Í Æò±ÕÀÓ±İ±â°£ °è»êÇÏ±â' ¹öÆ°À» ´­·¯ ÁÖ½Ê½Ã¿À");
+		alert("'ì¬ì§ì¼ìˆ˜ì™€ í‰ê· ì„ê¸ˆê¸°ê°„ ê³„ì‚°í•˜ê¸°' ë²„íŠ¼ì„ ëˆŒëŸ¬ ì£¼ì‹­ì‹œì˜¤");
 		return;
 	}
 	
@@ -229,12 +230,12 @@ function sumPay(obj){
 function avrPayCal(){
 
 	var main = document.form1;
-    //ÀÔ»ç Åğ»ç ÀÏÀÚÃ¼Å©
+    //ì…ì‚¬ í‡´ì‚¬ ì¼ìì²´í¬
 	if(!dateChk()) return;
 	
-	//Æò±ÕÀÓ±İ°è»ê Ã¼Å©
+	//í‰ê· ì„ê¸ˆê³„ì‚° ì²´í¬
 	if(main.control.value != "1"){
-		alert("'Æò±ÕÀÓ±İ°è»ê ±â°£º¸±â' ¹öÆ°À» ´­·¯ ÁÖ½Ê½Ã¿À");
+		alert("'í‰ê· ì„ê¸ˆê³„ì‚° ê¸°ê°„ë³´ê¸°' ë²„íŠ¼ì„ ëˆŒëŸ¬ ì£¼ì‹­ì‹œì˜¤");
 		return;
 	}
 
@@ -249,70 +250,70 @@ function avrPayCal(){
 	if(main.sumbasic.value == "" || main.sumbasic.value == "0")	sumbasic =0;
 	if(main.sumbonus.value == "" || main.sumbonus.value == "0")	sumbonus =0;
 
-    //»ó¿©±İ °è»ê
+    //ìƒì—¬ê¸ˆ ê³„ì‚°
     annualBonus = eval(delCom(main.annualBonus.value,main.annualBonus.value.length) * 0.25);
 
-    //¿¬Â÷¼ö´ç
+    //ì—°ì°¨ìˆ˜ë‹¹
     vacaBunus = eval(delCom(main.vacaBunus.value, main.vacaBunus.value.length) * 0.25);
 
-    //ÃÑÇÕ
+    //ì´í•©
     totalPay = eval(sumbasic + sumbonus + annualBonus + vacaBunus);
 
-    //ÀÓ±İÃÑÇÕÀÌ 0ÀÏ¶§
+    //ì„ê¸ˆì´í•©ì´ 0ì¼ë•Œ
 	if(main.avrPay.value == "" && totalPay == 0 ){
-		alert("ÀÓ±İÃÑÇÕÀÌ 0 ÀÔ´Ï´Ù. ÀÓ±İÀ» ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+		alert("ì„ê¸ˆì´í•©ì´ 0 ì…ë‹ˆë‹¤. ì„ê¸ˆì„ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤.");
 		return;
 	}
 	
-	//alert("±âº»±ŞÇÕparseInt=="+ eval(annualBonus + vacaBunus));
-    //alert("±âº»±ŞÇÕeval="+ eval(sumbasic + sumbonus));
-    //alert("±âº»±ŞÇÕ="+ sumbasic + sumbonus);
-    //alert("ÇÕ°è¾× ="+totalPay);
-    //alert("Æò±ÕÀÓ±İ==>"+eval(totalPay /main.sumday.value));
-    //alert("¼¼Â°ÀÚ¸®¹İ¿Ã¸²==>"+myRound(eval(totalPay /main.sumday.value), 2));
+	//alert("ê¸°ë³¸ê¸‰í•©parseInt=="+ eval(annualBonus + vacaBunus));
+    //alert("ê¸°ë³¸ê¸‰í•©eval="+ eval(sumbasic + sumbonus));
+    //alert("ê¸°ë³¸ê¸‰í•©="+ sumbasic + sumbonus);
+    //alert("í•©ê³„ì•¡ ="+totalPay);
+    //alert("í‰ê· ì„ê¸ˆ==>"+eval(totalPay /main.sumday.value));
+    //alert("ì„¸ì§¸ìë¦¬ë°˜ì˜¬ë¦¼==>"+myRound(eval(totalPay /main.sumday.value), 2));
 
-    //¼Ò¼ö ¼ÂÂ° ÀÚ¸®¿¡¼­ ¹İ¿Ã¸²
+    //ì†Œìˆ˜ ì…‹ì§¸ ìë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼
 	rounding = myRound(eval(totalPay /main.sumday.value),2)+"";
 	
-	//±İ¾× Æ÷¸ä¸¸µé¾îÁÖ±â
+	//ê¸ˆì•¡ í¬ë©§ë§Œë“¤ì–´ì£¼ê¸°
 	if(rounding.indexOf(".") == -1){
 	}else{
 		var k = rounding.lastIndexOf(".");
 		var comFormat = checkThousand(rounding.substring(0, k), '0','N'); ;		
 		rounding = comFormat + rounding.substring(k, rounding.length)
 	}
-	//1ÀÏ Æò±ÕÀÓ±İ. 
+	//1ì¼ í‰ê· ì„ê¸ˆ. 
     main.avrPay.value = rounding;
 	
-	//ÅğÁ÷±İÀº ""·Î ¼ÂÆÃ
+	//í‡´ì§ê¸ˆì€ ""ë¡œ ì…‹íŒ…
 	main.retirePay.value= "";
 }
 
 
 function calRet(){
     var main = document.form1;
-	//ÀÔ»ç Åğ»ç ÀÏÀÚÃ¼Å©
+	//ì…ì‚¬ í‡´ì‚¬ ì¼ìì²´í¬
 	if(!dateChk()) return;
 
     var retPay =0;
 	var rounding ;
 	var comPay = delCom(main.comPay.value, main.comPay.value.length);
 	var avrPay = delCom(main.avrPay.value, main.avrPay.value.length);
-	var calPay = delCom(main.avrPay.value, main.avrPay.value.length);	//±âº»Àº Æò±Õ°ªÀ¸·Î 
+	var calPay = delCom(main.avrPay.value, main.avrPay.value.length);	//ê¸°ë³¸ì€ í‰ê· ê°’ìœ¼ë¡œ 
 
-    //Æò±ÕÀÓ±İÀÌ ÀÔ·ÂµÇ¾î ÀÖ´Â Áö °è»ê
+    //í‰ê· ì„ê¸ˆì´ ì…ë ¥ë˜ì–´ ìˆëŠ” ì§€ ê³„ì‚°
 	if(main.avrPay.value =="" || main.avrPay.value =="0"){
-		alert("1ÀÏ Æò±ÕÀÓ±İÀÌ ¾ø½À´Ï´Ù. 'Æò±ÕÀÓ±İ°è»ê' ¹öÆ°À» ´­·¯ °è»êÇÏ½Ã°Å³ª Á÷Á¢ ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À");
+		alert("1ì¼ í‰ê· ì„ê¸ˆì´ ì—†ìŠµë‹ˆë‹¤. 'í‰ê· ì„ê¸ˆê³„ì‚°' ë²„íŠ¼ì„ ëˆŒëŸ¬ ê³„ì‚°í•˜ì‹œê±°ë‚˜ ì§ì ‘ ì…ë ¥í•´ ì£¼ì‹­ì‹œì˜¤");
 		return;
 	}
 
-	//Æò±ÕÀÓ±İ°è»ê Ã¼Å©
+	//í‰ê· ì„ê¸ˆê³„ì‚° ì²´í¬
 	if(main.control.value != "1"){
-		alert("'Æò±ÕÀÓ±İ°è»ê ±â°£º¸±â' ¹öÆ°À» ´­·¯ ÁÖ½Ê½Ã¿À");
+		alert("'í‰ê· ì„ê¸ˆê³„ì‚° ê¸°ê°„ë³´ê¸°' ë²„íŠ¼ì„ ëˆŒëŸ¬ ì£¼ì‹­ì‹œì˜¤");
 		return;
 	}
 
-	//Åë»óÀÓ±İÀÌ ÀÏÀÏÆò±ÕÀÓ±İº¸´Ù Å¬°æ¿ì Åë»óÀÓ±İÀÌ ÀÏÀÏÆò±ÕÀÓ±İÀÓ.
+	//í†µìƒì„ê¸ˆì´ ì¼ì¼í‰ê· ì„ê¸ˆë³´ë‹¤ í´ê²½ìš° í†µìƒì„ê¸ˆì´ ì¼ì¼í‰ê· ì„ê¸ˆì„.
 	if(main.comPay.value != "" && main.comPay.value != "0"){
 		if(parseFloat(avrPay) < parseFloat(comPay)){
 			calPay = comPay;
@@ -321,10 +322,10 @@ function calRet(){
 
 	retirePay = parseInt(calPay) * 30 * parseInt(main.termDays.value)/365; 
 	
-	//¼Ò¼ö ¼ÂÂ° ÀÚ¸®¿¡¼­ ¹İ¿Ã¸²
+	//ì†Œìˆ˜ ì…‹ì§¸ ìë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼
 	rounding = myRound(retirePay,2)+"";
 	
-	//±İ¾× Æ÷¸ä¸¸µé¾îÁÖ±â
+	//ê¸ˆì•¡ í¬ë©§ë§Œë“¤ì–´ì£¼ê¸°
 	if(rounding.indexOf(".") == -1){
 		rounding =checkThousand(rounding, '0','N'); ;	
 	}else{
@@ -371,7 +372,7 @@ function view_excel(){
 	var main = document.form1;
 	
 	if(main.retirePay.value == "" ){
-		alert("ÅğÁ÷±İ °è»êÀ» ÇØÁÖ½Ê½Ã¿À.");
+		alert("í‡´ì§ê¸ˆ ê³„ì‚°ì„ í•´ì£¼ì‹­ì‹œì˜¤.");
 		return;
 	}
 	
@@ -387,9 +388,9 @@ function view_excel(){
 <FORM name=form1><INPUT type=hidden name=control> <INPUT type=hidden name=index_value> 
 <DIV class=popup>
 <DIV class=content>
-<DIV class=CAPTION>¢Ã 1´Ü°è : ÀçÁ÷±â°£°ú Æò±ÕÀÓ±İ »êÁ¤±â°£ °è»ê</DIV>
+<DIV class=CAPTION>â–£ 1ë‹¨ê³„ : ì¬ì§ê¸°ê°„ê³¼ í‰ê· ì„ê¸ˆ ì‚°ì •ê¸°ê°„ ê³„ì‚°</DIV>
 <DL class=search>
-  <DT><LABEL for=syear>ÀÔ»çÀÏÀÚ:</LABEL></DT>
+  <DT><LABEL for=syear>ì…ì‚¬ì¼ì:</LABEL></DT>
   <DD><SELECT id=syear name=syear>
   	<OPTION selected value=2016>2016</OPTION> 
     <OPTION value=2015>2015</OPTION>  
@@ -447,7 +448,7 @@ function view_excel(){
     <OPTION value=1963>1963</OPTION> 
     <OPTION value=1962>1962</OPTION> 
     <OPTION value=1961>1961</OPTION> 
-    <OPTION value=1960>1960</OPTION></SELECT> ³â 
+    <OPTION value=1960>1960</OPTION></SELECT> ë…„ 
     	<SELECT name=smon> 
     <OPTION selected value=1>1</OPTION> 
     <OPTION value=2>2</OPTION> 
@@ -460,7 +461,7 @@ function view_excel(){
     <OPTION value=9>9</OPTION> 
     <OPTION value=10>10</OPTION> 
     <OPTION value=11>11</OPTION> 
-    <OPTION value=12>12</OPTION></SELECT> ¿ù 
+    <OPTION value=12>12</OPTION></SELECT> ì›” 
     	<SELECT name=sday> 
     <OPTION selected value=1>1</OPTION> 
     <OPTION value=2>2</OPTION> 
@@ -493,8 +494,8 @@ function view_excel(){
     <OPTION value=28>28</OPTION> 
     <OPTION value=29>29</OPTION> 
     <OPTION value=30>30</OPTION> 
-    <OPTION value=31>31</OPTION></SELECT> ÀÏ </DD>
-  <DT><LABEL for=eyear>ÅğÁ÷ÀÏÀÚ:</LABEL></DT>
+    <OPTION value=31>31</OPTION></SELECT> ì¼ </DD>
+  <DT><LABEL for=eyear>í‡´ì§ì¼ì:</LABEL></DT>
   <DD><SELECT id=eyear name=eyear> 
   	<OPTION selected value=2016>2016</OPTION> 
     <OPTION value=2015>2015</OPTION>  
@@ -552,7 +553,7 @@ function view_excel(){
     <OPTION value=1963>1963</OPTION> 
     <OPTION value=1962>1962</OPTION> 
     <OPTION value=1961>1961</OPTION> 
-    <OPTION value=1960>1960</OPTION></SELECT> ³â 
+    <OPTION value=1960>1960</OPTION></SELECT> ë…„ 
   <SELECT name=emon> 
   	<OPTION selected value=1>1</OPTION> 
   	<OPTION value=2>2</OPTION> 
@@ -565,7 +566,7 @@ function view_excel(){
     <OPTION value=9>9</OPTION> 
     <OPTION value=10>10</OPTION> 
     <OPTION value=11>11</OPTION> 
-    <OPTION value=12>12</OPTION></SELECT> ¿ù 
+    <OPTION value=12>12</OPTION></SELECT> ì›” 
   <SELECT name=eday> 
   	<OPTION selected value=1>1</OPTION> 
   	<OPTION value=2>2</OPTION> 
@@ -597,96 +598,96 @@ function view_excel(){
     <OPTION value=28>28</OPTION> 
     <OPTION value=29>29</OPTION> 
     <OPTION value=30>30</OPTION> 
-    <OPTION value=31>31</OPTION></SELECT> ÀÏ </DD>
+    <OPTION value=31>31</OPTION></SELECT> ì¼ </DD>
 <br><br>
-  <DT>ÀçÁ÷ÀÏ¼ö:</DT>
-  <DD><INPUT class=non1 readOnly size=7 type=text name=termDays> ÀÏ
+  <DT>ì¬ì§ì¼ìˆ˜:</DT>
+  <DD><INPUT class=non1 readOnly size=7 type=text name=termDays> ì¼
 <script>
 function newWin(url,w,h) {
 window.open
 (url,'new_win','width='+w+',height='+h+',toolbars=no,menubars=no,scrollbars=yes');
 }
 </script>
-<SPAN class=btn3><INPUT title="Å¬¸¯ÇÏ¸é Æò±ÕÀÓ±İ°è»ê ±â°£À» È­¸é¿¡ º¸¿©Áİ´Ï´Ù" onclick=javascript:setDate() value="ÀçÁ÷ÀÏ¼ö¿Í Æò±ÕÀÓ±İ »êÁ¤±â°£ °è»êÇÏ±â" type=button></SPAN> 
-<SPAN class=btn3_1><a href=# onclick=newWin('http://www.nodong.or.kr/sangdam/retire_pay/tj_guide.htm',470,500)>ÅğÁ÷ÀÏ<img src="http://nodong.or.kr/pic/q_icon.gif" align="middle"></a></span>
+<SPAN class=btn3><INPUT title="í´ë¦­í•˜ë©´ í‰ê· ì„ê¸ˆê³„ì‚° ê¸°ê°„ì„ í™”ë©´ì— ë³´ì—¬ì¤ë‹ˆë‹¤" onclick=javascript:setDate() value="ì¬ì§ì¼ìˆ˜ì™€ í‰ê· ì„ê¸ˆ ì‚°ì •ê¸°ê°„ ê³„ì‚°í•˜ê¸°" type=button></SPAN> 
+<SPAN class=btn3_1><a href=# onclick=newWin('http://www.nodong.or.kr/sangdam/retire_pay/tj_guide.htm',470,500)>í‡´ì§ì¼<img src="http://nodong.or.kr/pic/q_icon.gif" align="middle"></a></span>
 
   </DD></DL>
 
-<TABLE summary="ÅğÁ÷Àü 3°³¿ù ÀÓ±İ ÃÑ¾× °è»ê">
-  <CAPTION>¢Ã 2´Ü°è : ÃÖÁ¾ 3°³¿ù ÀÓ±İ °è»ê</CAPTION>
-  <SPAN class=btn2><!----<INPUT title="3°³¿ù ÀÓ±İÀ» 0À¸·Î ÃÊ±âÈ­ÇÕ´Ï´Ù" onclick=payreset() value=ÀÓ±İÃÊ±âÈ­ type=button>----></SPAN> 
+<TABLE summary="í‡´ì§ì „ 3ê°œì›” ì„ê¸ˆ ì´ì•¡ ê³„ì‚°">
+  <CAPTION>â–£ 2ë‹¨ê³„ : ìµœì¢… 3ê°œì›” ì„ê¸ˆ ê³„ì‚°</CAPTION>
+  <SPAN class=btn2><!----<INPUT title="3ê°œì›” ì„ê¸ˆì„ 0ìœ¼ë¡œ ì´ˆê¸°í™”í•©ë‹ˆë‹¤" onclick=payreset() value=ì„ê¸ˆì´ˆê¸°í™” type=button>----></SPAN> 
 
   <THEAD>
   <TR>
-    <TH scope=col>±â°£</TH>
-    <TH scope=col>ÀÏ¼ö</TH>
-    <TH scope=col>±âº»±Ş</TH>
-    <TH scope=col>±âÅ¸¼ö´ç</TH></TR></THEAD>
+    <TH scope=col>ê¸°ê°„</TH>
+    <TH scope=col>ì¼ìˆ˜</TH>
+    <TH scope=col>ê¸°ë³¸ê¸‰</TH>
+    <TH scope=col>ê¸°íƒ€ìˆ˜ë‹¹</TH></TR></THEAD>
   <TBODY>
   <TR>
     <TD scope=row width=18%><INPUT class=non2 readOnly size=8 type=text name=fymd1><BR><INPUT class=non2 readOnly size=10 type=text name=tymd1></TD>
-    <TD class=right width=17%><INPUT class=non2 readOnly size=1 height=10 type=text name=cntday1>ÀÏ</TD>
-    <TD width=32% align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '1','Y')" value=0 size=7 type=text name=basic1>¿ø</TD>
-    <TD width=33% align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '2','Y')" value=0 size=7 type=text name=bonus1>¿ø</TD></TR>
+    <TD class=right width=17%><INPUT class=non2 readOnly size=1 height=10 type=text name=cntday1>ì¼</TD>
+    <TD width=32% align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '1','Y')" value=0 size=7 type=text name=basic1>ì›</TD>
+    <TD width=33% align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '2','Y')" value=0 size=7 type=text name=bonus1>ì›</TD></TR>
       
       
   <TR>
     <TD scope=row><INPUT class=non2 readOnly size=8 type=text name=fymd2><BR><INPUT class=non2 readOnly size=9 type=text name=tymd2> </TD>
-    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday2>ÀÏ</TD>
-    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '3','Y')" value=0 size=7 type=text name=basic2>¿ø</TD>
-    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '4','Y')" value=0 size=7 type=text name=bonus2>¿ø</TD></TR>
+    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday2>ì¼</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '3','Y')" value=0 size=7 type=text name=basic2>ì›</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '4','Y')" value=0 size=7 type=text name=bonus2>ì›</TD></TR>
       
       
   <TR>
     <TD scope=row><INPUT class=non2 readOnly size=8 type=text name=fymd3><BR><INPUT class=non2 readOnly size=9 type=text name=tymd3> </TD>
-    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday3>ÀÏ</TD>
-    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '5','Y')" value=0 size=7 type=text name=basic3>¿ø</TD>
-    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '6','Y')" value=0 size=7 type=text name=bonus3>¿ø</TD></TR>
+    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday3>ì¼</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '5','Y')" value=0 size=7 type=text name=basic3>ì›</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '6','Y')" value=0 size=7 type=text name=bonus3>ì›</TD></TR>
       
       
   <TR>
     <TD scope=row><INPUT class=non2 readOnly size=8 type=text name=fymd4><BR><INPUT class=non2 readOnly size=9 type=text name=tymd4></TD>
-    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday4>ÀÏ</TD>
-    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '7','Y')" value=0 size=7 type=text name=basic4>¿ø</TD>
-    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '8','Y')" value=0 size=7 type=text name=bonus4>¿ø</TD></TR>
+    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=cntday4>ì¼</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '7','Y')" value=0 size=7 type=text name=basic4>ì›</TD>
+    <TD align=center><INPUT onblur='if(this.value ==""){ this.value ="0"};javascript:sumPay(this)' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '8','Y')" value=0 size=7 type=text name=bonus4>ì›</TD></TR>
 
 
   <TR class=end>
-    <TD scope=row>ÇÕ°è</TD>
-    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=sumday>ÀÏ</TD>
-    <TD align=center><INPUT class=non2 readOnly size=8 type=text name=sumbasic>¿ø</TD>
-    <TD align=center><INPUT class=non2 readOnly size=8 type=text name=sumbonus>¿ø</TD></TR>
+    <TD scope=row>í•©ê³„</TD>
+    <TD class=right><INPUT class=non2 readOnly size=1 type=text name=sumday>ì¼</TD>
+    <TD align=center><INPUT class=non2 readOnly size=8 type=text name=sumbasic>ì›</TD>
+    <TD align=center><INPUT class=non2 readOnly size=8 type=text name=sumbonus>ì›</TD></TR>
 
     	</TBODY></TABLE>
     	
-    	<SPAN class=btn11><INPUT title="3°³¿ù ÀÓ±İÀ» 0À¸·Î ÃÊ±âÈ­ÇÕ´Ï´Ù" onclick=payreset() value=ÀÓ±İÃÊ±âÈ­ type=button></span>
+    	<SPAN class=btn11><INPUT title="3ê°œì›” ì„ê¸ˆì„ 0ìœ¼ë¡œ ì´ˆê¸°í™”í•©ë‹ˆë‹¤" onclick=payreset() value=ì„ê¸ˆì´ˆê¸°í™” type=button></span>
 <DL>
-<DIV class=CAPTION>¢Ã 3´Ü°è : ÃÖÁ¾ 1³â°£ »ó¿©±İ &middot; ¿¬Â÷¼ö´ç °è»ê</div>
-  <DT>¿¬°£»ó¿©±İ ÃÑ¾× :</DT>
-  <DD><INPUT onblur='if(this.value ==""){ this.value ="0"}' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '9','Y')" value=0 size=8 type=text name=annualBonus>¿ø&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class=text10>(ÅğÁ÷ÀÏ ÀÌÀü 1³â ÀÌ³»)</span></DD>
-  <DT>¿¬Â÷¼ö´ç ÃÑ¾× : </DT>
-  <DD><INPUT onblur='if(this.value ==""){ this.value ="0"}' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '10','Y')" value=0 size=8 type=text name=vacaBunus>¿ø&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class=text10>(ÅğÁ÷ÀÏ ÀÌÀü 1³â ÀÌ³»)</span></DD>
+<DIV class=CAPTION>â–£ 3ë‹¨ê³„ : ìµœì¢… 1ë…„ê°„ ìƒì—¬ê¸ˆ &middot; ì—°ì°¨ìˆ˜ë‹¹ ê³„ì‚°</div>
+  <DT>ì—°ê°„ìƒì—¬ê¸ˆ ì´ì•¡ :</DT>
+  <DD><INPUT onblur='if(this.value ==""){ this.value ="0"}' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '9','Y')" value=0 size=8 type=text name=annualBonus>ì›&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class=text10>(í‡´ì§ì¼ ì´ì „ 1ë…„ ì´ë‚´)</span></DD>
+  <DT>ì—°ì°¨ìˆ˜ë‹¹ ì´ì•¡ : </DT>
+  <DD><INPUT onblur='if(this.value ==""){ this.value ="0"}' onkeydown=fn_onKeyOnlyNumber() onfocus='if(this.value == "0"){this.value="";}' onkeyup="checkThousand(this.value, '10','Y')" value=0 size=8 type=text name=vacaBunus>ì›&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class=text10>(í‡´ì§ì¼ ì´ì „ 1ë…„ ì´ë‚´)</span></DD>
   </DL>
 
 
 
 <DL>
-<DIV class=CAPTION>¢Ã 4´Ü°è : Æò±ÕÀÓ±İ°ú ÅğÁ÷±İ °è»ê ¹× °á°úº¸±â</DIV>
+<DIV class=CAPTION>â–£ 4ë‹¨ê³„ : í‰ê· ì„ê¸ˆê³¼ í‡´ì§ê¸ˆ ê³„ì‚° ë° ê²°ê³¼ë³´ê¸°</DIV>
 	
-  <DT>1ÀÏ Æò±ÕÀÓ±İ : </DT>
-  <DD><INPUT onkeydown=fn_onKeyOnlyNumber() onkeyup="checkThousand(this.value, '11','Y')" size=10 type=text name=avrPay>¿ø 
-  <SPAN class=btn1><INPUT title="Å¬¸¯ÇÏ¸é Æò±ÕÀÓ±İ°è»ê °á°ú¸¦ º¸¿©Áİ´Ï´Ù" onclick=javascript:avrPayCal() value="Æò±ÕÀÓ±İ °è»êÇÏ±â" type=button></SPAN></DD>
+  <DT>1ì¼ í‰ê· ì„ê¸ˆ : </DT>
+  <DD><INPUT onkeydown=fn_onKeyOnlyNumber() onkeyup="checkThousand(this.value, '11','Y')" size=10 type=text name=avrPay>ì› 
+  <SPAN class=btn1><INPUT title="í´ë¦­í•˜ë©´ í‰ê· ì„ê¸ˆê³„ì‚° ê²°ê³¼ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤" onclick=javascript:avrPayCal() value="í‰ê· ì„ê¸ˆ ê³„ì‚°í•˜ê¸°" type=button></SPAN></DD>
 
-  <DT>1ÀÏ Åë»óÀÓ±İ : </DT>
-  <DD><INPUT onkeydown=fn_onKeyOnlyNumber() onkeyup="checkThousand(this.value, '12','Y')" size=10 type=text name=comPay>¿ø</DD>
+  <DT>1ì¼ í†µìƒì„ê¸ˆ : </DT>
+  <DD><INPUT onkeydown=fn_onKeyOnlyNumber() onkeyup="checkThousand(this.value, '12','Y')" size=10 type=text name=comPay>ì›</DD>
 
-  <DT>ÅğÁ÷±İ : </DT>
-  <DD><INPUT style="TEXT-ALIGN: right" readOnly size=15 type=text name=retirePay>¿ø <SPAN class=btn1><INPUT title="Å¬¸¯ÇÏ¸é ÅğÁ÷±İ°è»ê °á°ú¸¦ º¸¿©Áİ´Ï´Ù" onclick=javascript:calRet() value="ÅğÁ÷±İ °è»êÇÏ±â" type=button></SPAN></DD>
-  <DT>ÅğÁ÷±İ °è»ê °á°ú º¸±â: </DT>  
-  <DD><SPAN class=btn4><INPUT title="Å¬¸¯ÇÏ¸é °á°ú¸¦ ¿¢¼¿ ÆÄÀÏ·Î º¼ ¼ö ÀÖ½À´Ï´Ù" onclick=javascript:view_excel() value="¿¢¼¿·Î °è»ê ³»¿ª¼­ ¹Ş±â" type=button></SPAN></DD>
+  <DT>í‡´ì§ê¸ˆ : </DT>
+  <DD><INPUT style="TEXT-ALIGN: right" readOnly size=15 type=text name=retirePay>ì› <SPAN class=btn1><INPUT title="í´ë¦­í•˜ë©´ í‡´ì§ê¸ˆê³„ì‚° ê²°ê³¼ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤" onclick=javascript:calRet() value="í‡´ì§ê¸ˆ ê³„ì‚°í•˜ê¸°" type=button></SPAN></DD>
+  <DT>í‡´ì§ê¸ˆ ê³„ì‚° ê²°ê³¼ ë³´ê¸°: </DT>  
+  <DD><SPAN class=btn4><INPUT title="í´ë¦­í•˜ë©´ ê²°ê³¼ë¥¼ ì—‘ì…€ íŒŒì¼ë¡œ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤" onclick=javascript:view_excel() value="ì—‘ì…€ë¡œ ê³„ì‚° ë‚´ì—­ì„œ ë°›ê¸°" type=button></SPAN></DD>
   
 </DL>
-* 1ÀÏ Æò±ÕÀÓ±İÀÌ 1ÀÏ Åë»óÀÓ±İº¸´Ù ÀûÀ¸¸é, <b>1ÀÏ Åë»óÀÓ±İ</b>À¸·Î ÅğÁ÷±İÀ» °è»êÇØ¾ß ÇÕ´Ï´Ù.(±Ù·Î±âÁØ¹ı Á¦2Á¶Á¦2Ç×) <a href=# onclick=newWin('http://www.nodong.or.kr/sangdam/retire_pay/tj_guide.htm',470,500)><img src="http://nodong.or.kr/pic/q_icon.gif" align="middle"></a>
+* 1ì¼ í‰ê· ì„ê¸ˆì´ 1ì¼ í†µìƒì„ê¸ˆë³´ë‹¤ ì ìœ¼ë©´, <b>1ì¼ í†µìƒì„ê¸ˆ</b>ìœ¼ë¡œ í‡´ì§ê¸ˆì„ ê³„ì‚°í•´ì•¼ í•©ë‹ˆë‹¤.(ê·¼ë¡œê¸°ì¤€ë²• ì œ2ì¡°ì œ2í•­) <a href=# onclick=newWin('http://www.nodong.or.kr/sangdam/retire_pay/tj_guide.htm',470,500)><img src="http://nodong.or.kr/pic/q_icon.gif" align="middle"></a>
 </DIV></DIV></FORM>
 
 

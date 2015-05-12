@@ -1,6 +1,6 @@
 /** =============================================
 Return : String (YYYYMMDD)
-Comment: ÇöÀç³âµµ¸¦ ±¸ÇÑ´Ù (¹®ÀÚ:YYYYMMDD)
+Comment: í˜„ì¬ë…„ë„ë¥¼ êµ¬í•œë‹¤ (ë¬¸ì:YYYYMMDD)
 Usage  :
 ---------------------------------------------- */
 function fn_getDateNowYear()
@@ -16,7 +16,7 @@ function fn_getDateNowYear()
 
 /** =============================================
 Return : String
-Comment: sValÀÇ ±æÀÌ¸¦ iLenÀ¸·Î "0"À¸·Î Ã¤¿ö ¸ÂÃá °ªÀ» ¸®ÅÏ
+Comment: sValì˜ ê¸¸ì´ë¥¼ iLenìœ¼ë¡œ "0"ìœ¼ë¡œ ì±„ì›Œ ë§ì¶˜ ê°’ì„ ë¦¬í„´
 Usage  :
 ---------------------------------------------- */
 function fn_setFillzeroByVal( sVal, iVal )
@@ -33,9 +33,9 @@ function fn_setFillzeroByVal( sVal, iVal )
 
 //===============================================
 
-// event.shiftKey : Å°ÄÚµå°ª
+// event.shiftKey : í‚¤ì½”ë“œê°’
 // event.shiftKey, event.altKey, event.ctrlKey : boolean
-// event.srcElement : ÀÌº¥Æ®°¡ ¹ß»ıµÈ °´Ã¼
+// event.srcElement : ì´ë²¤íŠ¸ê°€ ë°œìƒëœ ê°ì²´
 // 8: BackSpace, 46: Del
 // ","=44, "-"=45, "."=46, "/"=47
 // "0"=48, "9"=57
@@ -44,7 +44,7 @@ function fn_setFillzeroByVal( sVal, iVal )
 // 37:LeftArrow, 38:UpArrow, 39:RightArrow, 40:DownArrow **
 /** =============================================
 Return : event.returnValue = boolean
-Comment: Å°ÀÔ·Â½Ã ¼ıÀÚ¸¸ ÀÔ·Â ¹Ş°Ô ÇÑ´Ù.
+Comment: í‚¤ì…ë ¥ì‹œ ìˆ«ìë§Œ ì…ë ¥ ë°›ê²Œ í•œë‹¤.
 Usage  : onKeyDown="fn_onKeyOnlyNumber();"
 ---------------------------------------------- */
 function fn_onKeyOnlyNumber()
@@ -59,7 +59,7 @@ function fn_onKeyOnlyNumber()
     var isCut  = false
     var isTrue = true;
 
-    event.srcElement.style.imeMode = "inactive"; //style.imeMode(active:ÇÑ±Û, inactive:¿µ¹®) ±×·¯³ª, µ¿ÀûÀ¸·Î´Â ¹İ¿µ ¾ÈµÈ´Ù. (html tagÀÇ style="IME-MODE:inactive;" ·Î ÁöÁ¤ÇÏ¿©¾ß¸¸..)
+    event.srcElement.style.imeMode = "inactive"; //style.imeMode(active:í•œê¸€, inactive:ì˜ë¬¸) ê·¸ëŸ¬ë‚˜, ë™ì ìœ¼ë¡œëŠ” ë°˜ì˜ ì•ˆëœë‹¤. (html tagì˜ style="IME-MODE:inactive;" ë¡œ ì§€ì •í•˜ì—¬ì•¼ë§Œ..)
 
     var sReturnValue = "";
     for (var ii=0; ii < sValue.length; ii++) {
@@ -96,7 +96,7 @@ function fn_onKeyOnlyNumber()
 
 /** =============================================
 Return : boolean
-Comment: ³¯Â¥ À¯È¿¼º Ã¼Å©(ºĞ¸®µÈ yyyy, mm, dd °ª)
+Comment: ë‚ ì§œ ìœ íš¨ì„± ì²´í¬(ë¶„ë¦¬ëœ yyyy, mm, dd ê°’)
 Usage  :
 ---------------------------------------------- */
 function fn_isYearMonthDay(yyyy, mm, dd)
@@ -118,8 +118,8 @@ function fn_isYearMonthDay(yyyy, mm, dd)
 }
 
 /** =============================================
-Return : int (ÇØ´ç ³â,¿ùÀÇ ³¯¼ö)
-Comment: ÀÔ·Â¹ŞÀº ³â,¿ùÀÇ ÃÖ´ë ÀÏÀ» ±¸ÇÑ´Ù.
+Return : int (í•´ë‹¹ ë…„,ì›”ì˜ ë‚ ìˆ˜)
+Comment: ì…ë ¥ë°›ì€ ë…„,ì›”ì˜ ìµœëŒ€ ì¼ì„ êµ¬í•œë‹¤.
 Usage  :
 ---------------------------------------------- */
 function fn_MaxdayYearMonth(yyyy, mm)
@@ -138,7 +138,7 @@ function fn_MaxdayYearMonth(yyyy, mm)
 
 /** =============================================
 Return : boolean
-Comment: ÀÔ·Â¹ŞÀº ³âµµ°¡ À±³âÀÌ¸é true
+Comment: ì…ë ¥ë°›ì€ ë…„ë„ê°€ ìœ¤ë…„ì´ë©´ true
 Usage  :
 ---------------------------------------------- */
 function fn_isLeafYear(YYYY)
@@ -151,43 +151,43 @@ function fn_isLeafYear(YYYY)
 //===============================================
 
 														//keydown
-function checkThousand(inputVal, type, keydown) {		// inputValÀº Ãµ´ÜÀ§¿¡ , Ç¥½Ã¸¦ À§ÇØ °¡Á®¿À´Â °ª
-		main = document.form1;			// ¿©±â¼­ type Àº ÇØ´çÇÏ´Â °ªÀ» ³Ö±â À§ÇÑ À§Ä¡ÁöÁ¤ index
-		var chk		= 0;				// chk ´Â Ãµ´ÜÀ§·Î ³ª´­ ±æÀÌ¸¦ check
-		var share	= 0;				// share 200,000 ¿Í °°ÀÌ 3ÀÇ ¹è¼öÀÏ ¶§¸¦ ±¸ºĞÇÏ±â À§ÇÑ º¯¼ö
+function checkThousand(inputVal, type, keydown) {		// inputValì€ ì²œë‹¨ìœ„ì— , í‘œì‹œë¥¼ ìœ„í•´ ê°€ì ¸ì˜¤ëŠ” ê°’
+		main = document.form1;			// ì—¬ê¸°ì„œ type ì€ í•´ë‹¹í•˜ëŠ” ê°’ì„ ë„£ê¸° ìœ„í•œ ìœ„ì¹˜ì§€ì • index
+		var chk		= 0;				// chk ëŠ” ì²œë‹¨ìœ„ë¡œ ë‚˜ëˆŒ ê¸¸ì´ë¥¼ check
+		var share	= 0;				// share 200,000 ì™€ ê°™ì´ 3ì˜ ë°°ìˆ˜ì¼ ë•Œë¥¼ êµ¬ë¶„í•˜ê¸° ìœ„í•œ ë³€ìˆ˜
 		var start	= 0;
-		var triple	= 0;				// triple 3, 6, 9 µî 3ÀÇ ¹è¼ö 
-		var end		= 0;				// start, end substring ¹üÀ§¸¦ À§ÇÑ º¯¼ö  
+		var triple	= 0;				// triple 3, 6, 9 ë“± 3ì˜ ë°°ìˆ˜ 
+		var end		= 0;				// start, end substring ë²”ìœ„ë¥¼ ìœ„í•œ ë³€ìˆ˜  
 		var total	= "";			
-		var input	= "";				// total ÀÓÀÇ·Î string µéÀ» ±ÔÇÕÇÏ±â À§ÇÑ º¯¼ö
+		var input	= "";				// total ì„ì˜ë¡œ string ë“¤ì„ ê·œí•©í•˜ê¸° ìœ„í•œ ë³€ìˆ˜
 		if (inputVal.length > 3){
 			input = delCom(inputVal, inputVal.length);
 /*			for(i=0; i<inputVal.length; i++){
-				if(inputVal.substring(i,i+1)!=','){		// ¸ÕÀú substringÀ» À§ÇØ
-					input += inputVal.substring(i,i+1);	// °ªÀÇ ¸ğµç , ¸¦ Á¦°Å
+				if(inputVal.substring(i,i+1)!=','){		// ë¨¼ì € substringì„ ìœ„í•´
+					input += inputVal.substring(i,i+1);	// ê°’ì˜ ëª¨ë“  , ë¥¼ ì œê±°
 				}
 			}*/
-			chk = (input.length)/3;					// input °ªÀ» 3ÀÇ·Î ³ª´« °ª °è»ê
-			chk = Math.floor(chk);					// ±× °ªº¸´Ù ÀÛ°Å³ª °°Àº °ª Áß ÃÖ´ëÀÇ Á¤¼ö °è»ê
-			share = (input.length)%3;				// 200,000 ¿Í °°Àº 3ÀÇ ¹è¼öÀÎ ¼ö¸¦ °É·¯³»±â À§ÇØ ³ª¸ÓÁö °è»ê
+			chk = (input.length)/3;					// input ê°’ì„ 3ì˜ë¡œ ë‚˜ëˆˆ ê°’ ê³„ì‚°
+			chk = Math.floor(chk);					// ê·¸ ê°’ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ì€ ê°’ ì¤‘ ìµœëŒ€ì˜ ì •ìˆ˜ ê³„ì‚°
+			share = (input.length)%3;				// 200,000 ì™€ ê°™ì€ 3ì˜ ë°°ìˆ˜ì¸ ìˆ˜ë¥¼ ê±¸ëŸ¬ë‚´ê¸° ìœ„í•´ ë‚˜ë¨¸ì§€ ê³„ì‚°
 			if (share == 0 ) {						
-				chk = chk - 1;					// ±æÀÌ°¡ 3ÀÇ ¹è¼öÀÎ ¼ö¸¦ À§ÇØ chk °ªÀ» ÇÏ³ª »«´Ù.
+				chk = chk - 1;					// ê¸¸ì´ê°€ 3ì˜ ë°°ìˆ˜ì¸ ìˆ˜ë¥¼ ìœ„í•´ chk ê°’ì„ í•˜ë‚˜ ëº€ë‹¤.
 			}
 			for(i=chk; i>0; i--){
-				triple = i * 3;					// 3ÀÇ ¹è¼ö °è»ê 9,6,3 µî°ú °°Àº ¼øÀ¸·Î
-				end = Number(input.length)-Number(triple);	// ÀÌ ¶§ÀÇ end °ªÀº Á¡Â÷ ´Ã¾î ³ª°Ô µÈ´Ù.
-				total += input.substring(start,end)+",";	// totalÀº ¾Õ¿¡¼­ ºÎÅÍ Â÷·Ê·Î ºÙÀÎ´Ù.
-				start = end;					// end °ªÀº ´ÙÀ½¹øÀÇ start °ªÀ¸·Î µé¾î°£´Ù.
+				triple = i * 3;					// 3ì˜ ë°°ìˆ˜ ê³„ì‚° 9,6,3 ë“±ê³¼ ê°™ì€ ìˆœìœ¼ë¡œ
+				end = Number(input.length)-Number(triple);	// ì´ ë•Œì˜ end ê°’ì€ ì ì°¨ ëŠ˜ì–´ ë‚˜ê²Œ ëœë‹¤.
+				total += input.substring(start,end)+",";	// totalì€ ì•ì—ì„œ ë¶€í„° ì°¨ë¡€ë¡œ ë¶™ì¸ë‹¤.
+				start = end;					// end ê°’ì€ ë‹¤ìŒë²ˆì˜ start ê°’ìœ¼ë¡œ ë“¤ì–´ê°„ë‹¤.
 			}
-			total +=input.substring(start,input.length);		// ÃÖÁ¾ÀûÀ¸·Î ¸¶Áö¸· 3ÀÚ¸® ¼ö¸¦ µÚ¿¡ ºÙÈù´Ù.
+			total +=input.substring(start,input.length);		// ìµœì¢…ì ìœ¼ë¡œ ë§ˆì§€ë§‰ 3ìë¦¬ ìˆ˜ë¥¼ ë’¤ì— ë¶™íŒë‹¤.
 		} else {
-			total = inputVal;					// 3ÀÇ ¹è¼ö°¡ µÇ±â ÀÌÀü¿¡´Â °ªÀÌ ±×´ë·Î À¯ÁöµÈ´Ù.
+			total = inputVal;					// 3ì˜ ë°°ìˆ˜ê°€ ë˜ê¸° ì´ì „ì—ëŠ” ê°’ì´ ê·¸ëŒ€ë¡œ ìœ ì§€ëœë‹¤.
 		}
 
 
 		if(keydown =='Y'){
 			if ( type =='1' ) {
-				main.basic1.value=total;					// type ¿¡ µû¶ó ÃÖÁ¾°ªÀ» ³Ö¾î ÁØ´Ù.
+				main.basic1.value=total;					// type ì— ë”°ë¼ ìµœì¢…ê°’ì„ ë„£ì–´ ì¤€ë‹¤.
 			}
 			if ( type =='2' ) {
 				main.bonus1.value=total;					
@@ -234,8 +234,8 @@ function checkThousand(inputVal, type, keydown) {		// inputValÀº Ãµ´ÜÀ§¿¡ , Ç¥½Ã
 function delCom(inputVal, count){
 		var tmp = "";
 		for(i=0; i<count; i++){
-			if(inputVal.substring(i,i+1)!=','){		// ¸ÕÀú substringÀ» À§ÇØ
-				tmp += inputVal.substring(i,i+1);	// °ªÀÇ ¸ğµç , ¸¦ Á¦°Å
+			if(inputVal.substring(i,i+1)!=','){		// ë¨¼ì € substringì„ ìœ„í•´
+				tmp += inputVal.substring(i,i+1);	// ê°’ì˜ ëª¨ë“  , ë¥¼ ì œê±°
 			}
 		}
 		return tmp;
@@ -243,9 +243,9 @@ function delCom(inputVal, count){
 
 
 function roundGo(gap) { 
-   if (gap.indexOf(".") == -1) { // ¾ç¼ö(Á¤¼ö)
+   if (gap.indexOf(".") == -1) { // ì–‘ìˆ˜(ì •ìˆ˜)
      return gap;
-   } else { // ½Ç¼ö
+   } else { // ì‹¤ìˆ˜
      var lastSu;
     var suArr = gap.split(".");
     var tmp   = suArr[1].substr(0,3);

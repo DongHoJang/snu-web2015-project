@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>테스트 > test</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<script type="text/javascript">
+//<![CDATA[
+var rt_path = ""
+  , rt_bo_table = 'test'
+  , rt_bo_sca = ''
+  , rt_charset = "UTF-8";
+//]]>
+</script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/js/html5shiv.js"></script>
+<script type="text/javascript" src="/js/respond.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/js/common.js"></script>
+</head>
+<body class="body_gray">
+<a name="rt_head"></a>
+<!--[if lte IE 7]>
+<div class="alert alert-danger text-center" style="width:100%; position:absolute; top:0; left:0; z-index:1040;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    사용 중인 브라우저는 보안에 취약한 구 버전의 브라우저입니다.<br />
+    웹 브라우저를 <a href="http://www.microsoft.com/korea/ie" class="alert-link" target="_blank">업그레이드</a>하시거나,
+    다른 브라우저를 사용해보시기 바랍니다.<br />
+    <a href="http://www.google.com/chrome?hl=ko" class="alert-link" target="_blank">크롬 바로가기</a>,
+    <a href="http://www.mozilla.or.kr/ko/firefox/" class="alert-link" target="_blank">파이어폭스 바로가기</a>
+</div>
+<![endif]-->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span> <strong>Tested.</strong></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                                <li><a href="/member/login"><span class="glyphicon glyphicon-ok"></span> 로그인</a></li>
+                <li><a href="/member/join"><span class="glyphicon glyphicon-gift"></span> 회원가입</a></li>
+                <li><a href="/member/forget_idpwd"><span class="glyphicon glyphicon-question-sign"></span> 아이디/비밀번호 찾기</a></li>
+
+                            </ul>
+
+            <form class="navbar-form navbar-right form-inline span4" name="search" method="get" action="/search" onsubmit="return mSearch(this);">
+                <div class="input-group">
+                    <input type="text" name="stx" class="form-control input-sm" maxlength="20" placeholder="검색어..." />
+                    <span class="input-group-btn"><button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-search"></span></button></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <p>상단</p>
+    <div class="clearfix">
+        <div class="col-md-10 wrap_content"><div class="page-header clearfix">
+    <p class="pull-left">
+        </p>
+    <p class="pull-right">
+        <span class="glyphicon glyphicon-list-alt"></span>
+        <span class="text-muted"><strong>Total 114</strong></span>
+             </p>
+</div>
+
+
+<form name="fboardlist" method="post" action="">
+<input type="hidden" name="bo_table" value="test" />
+<input type="hidden" name="sw" value="" />
+
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th class="text-center">번호</th>
+                        <th>제목</th>
+            <th>글쓴이</th>
+            <th class="text-center"><a href="?&sst=wr_datetime&sod=desc">날짜</a></th>
+            <th class="text-center"><a href="?&sst=wr_hit&sod=desc">조회</a></th> 
+        </tr>
+    </thead>
+    <tbody>
+                <tr class="success">
+            <td class="text-center"><span class="glyphicon glyphicon-exclamation-sign text-danger"></span></td>
+                        <td><a href="/board/test/view/wr_id/1"><strong>이곳은 테스트 게시판입니다.</strong></a></td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, 'manya', &quot;마냐&quot;);" title="마냐"><img src='/data/member/ma/manya.gif' align='middle' alt='마냐' /> <span class="text-muted"><strong>마냐</strong></span></a></td>
+            <td class="text-center">10-07</td>
+            <td class="text-center">11105</td>
+        </tr>
+                <tr class="success">
+            <td class="text-center"><span class="glyphicon glyphicon-exclamation-sign text-danger"></span></td>
+                        <td><a href="/board/test/view/wr_id/2"><strong>관리자 테스트 계정 막았습니다.</strong></a></td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, 'manya', &quot;마냐&quot;);" title="마냐"><img src='/data/member/ma/manya.gif' align='middle' alt='마냐' /> <span class="text-muted"><strong>마냐</strong></span></a></td>
+            <td class="text-center">10-07</td>
+            <td class="text-center">10631</td>
+        </tr>
+        
+                <tr>
+            <td class="text-center">
+                114            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/116">ff</a>
+                                
+                    <span class="glyphicon glyphicon-fire text-danger" title="최신"></span>             </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;ff&quot;);" title="[비회원] ff"><span class="text-muted">ff</span></a></td>
+            <td class="text-center">01:15</td>
+            <td class="text-center">2</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                113            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/115">sdfsdfsdfsdfsdfsdf</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;이준호&quot;);" title="[비회원] 이준호"><span class="text-muted">이준호</span></a></td>
+            <td class="text-center">05-07</td>
+            <td class="text-center">18</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                112            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/114">3333</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;111&quot;);" title="[비회원] 111"><span class="text-muted">111</span></a></td>
+            <td class="text-center">05-07</td>
+            <td class="text-center">10</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                111            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/113">1111</a>
+                                
+                 <span class="glyphicon glyphicon-picture text-danger" title="이미지"></span>                </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;1111&quot;);" title="[비회원] 1111"><span class="text-muted">1111</span></a></td>
+            <td class="text-center">05-07</td>
+            <td class="text-center">5</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                110            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/112">test</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;test&quot;);" title="[비회원] test"><span class="text-muted">test</span></a></td>
+            <td class="text-center">05-06</td>
+            <td class="text-center">7</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                109            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/111">테스트</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;asd&quot;);" title="[비회원] asd"><span class="text-muted">asd</span></a></td>
+            <td class="text-center">05-01</td>
+            <td class="text-center">38</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                108            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/110">호호</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;호호&quot;);" title="[비회원] 호호"><span class="text-muted">호호</span></a></td>
+            <td class="text-center">04-30</td>
+            <td class="text-center">36</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                107            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/109">하하하</a>
+                <span class="text-muted"><small>(2)</small></span>                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;하하&quot;);" title="[비회원] 하하"><span class="text-muted">하하</span></a></td>
+            <td class="text-center">04-29</td>
+            <td class="text-center">41</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                106            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/108">afaewfawefwefwae</a>
+                                
+                 <span class="glyphicon glyphicon-picture text-danger" title="이미지"></span>                </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;aaa&quot;);" title="[비회원] aaa"><span class="text-muted">aaa</span></a></td>
+            <td class="text-center">04-28</td>
+            <td class="text-center">51</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                105            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/103">고고 테스트</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '1122', &quot;골드&quot;);" title="골드"><span class="text-muted"><strong>골드</strong></span></a></td>
+            <td class="text-center">04-27</td>
+            <td class="text-center">45</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                104            </td>
+                        <td>
+                <span class="glyphicon glyphicon-expand text-danger" title="답변"></span>                <a href="/board/test/view/wr_id/105">답변</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '1122', &quot;골드&quot;);" title="골드"><span class="text-muted"><strong>골드</strong></span></a></td>
+            <td class="text-center">04-27</td>
+            <td class="text-center">57</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                103            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/102">ddddddddddd</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;ㅇd&quot;);" title="[비회원] ㅇd"><span class="text-muted">ㅇd</span></a></td>
+            <td class="text-center">04-26</td>
+            <td class="text-center">50</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                102            </td>
+                        <td>
+                <span class="glyphicon glyphicon-expand text-danger" title="답변"></span>                <a href="/board/test/view/wr_id/106">글답변</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '1122', &quot;골드&quot;);" title="골드"><span class="text-muted"><strong>골드</strong></span></a></td>
+            <td class="text-center">04-27</td>
+            <td class="text-center">36</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                101            </td>
+                        <td>
+                　<span class="glyphicon glyphicon-expand text-danger" title="답변"></span>                <a href="/board/test/view/wr_id/107">ㄴㅇㄹㅇㄴㄹ</a>
+                <span class="text-muted"><small>(2)</small></span>                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '1122', &quot;골드&quot;);" title="골드"><span class="text-muted"><strong>골드</strong></span></a></td>
+            <td class="text-center">04-27</td>
+            <td class="text-center">55</td>
+        </tr>
+                <tr>
+            <td class="text-center">
+                100            </td>
+                        <td>
+                                <a href="/board/test/view/wr_id/97">just 테스트</a>
+                                
+                                 </td>
+            <td><a href="javascript:;" onclick="javascript:showSideView(this, '', &quot;test2&quot;);" title="[비회원] test2"><span class="text-muted">test2</span></a></td>
+            <td class="text-center">04-17</td>
+            <td class="text-center">91</td>
+        </tr>
+            </tbody>
+</table>
+
+<div class="clearfix">
+    <span class="btn-group"></span>
+    <div class="pull-right">
+        <a href="/board/test/write" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> 글쓰기</a>    </div>
+</div>
+
+</form>
+
+
+<br/>
+<form name="fsearch" method="get" action="/board/test/lists" onsubmit="return doSearch(this);">
+<input type="hidden" name="sca" value="" />
+
+    <div class="clearfix">
+        <select name="sfl" class="form-control input-sm auto pull-left">
+            <option value="wr_subject">제목</option>
+            <option value="wr_content">내용</option>
+            <option value="wr_subject.wr_content">제목+내용</option>
+            <option value="mb_id">회원아이디</option>
+            <option value="wr_name">글쓴이</option>
+        </select>
+        <div class="span4 pull-left">
+            <div class="input-group">
+                <input name="stx" class="form-control input-sm" maxlength="15" value="" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-sm btn-primary">검색</button>
+                </span>
+            </div>
+        </div>
+
+        <div class="pull-right">
+            <ul class="pagination"><li class="active"><a>1</a></li><li><a href="/board/test/lists/page/2">2</a></li><li><a href="/board/test/lists/page/3">3</a></li><li><a href="/board/test/lists/page/4">4</a></li><li><a href="/board/test/lists/page/5">5</a></li><li><a href="/board/test/lists/page/2" >&gt;</a></li><li><a href="/board/test/lists/page/8" >끝 &raquo;</a></li></ul>        </div>
+    </div>
+</form>
+
+
+<script type='text/javascript'>
+//<![CDATA[
+//]]>
+</script>        </div><!--/.col-md-10-->
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="/board/test">테스트 게시판</a></li>
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+                <li><a href="#">Link4</a></li>
+            </ul>
+        </div>
+    </div><!--/.clearfix-->
+
+    <hr/>
+
+    <footer>
+    <p>
+        Copyright ⓒ <a href="http://www.tested.co.kr">Tested.</a> All Rights Reserved.
+            </p>
+    </footer>
+
+</div><!--/.container-->
+
+
+<script type='text/javascript'>
+//<![CDATA[
+function mSearch(f) {
+    var stx = f.stx.value.replace(/(^\s*)|(\s*$)/g,'');
+    if (stx.length < 2) {
+        alert('2글자 이상으로 검색해 주세요.');
+        f.stx.focus();
+        return false;
+    }
+
+    return true;
+}
+//]]>
+</script>
+<ul id="alert" class="list-unstyled" style="width:230px; position:fixed; top:10%; left:50%; margin-left:-115px; z-index:1920;"></ul>
+
+<script type="text/javascript" src="/js/board.js"></script>
+<script type="text/javascript" src="/js/sideview.js"></script>
+</body>
+</html>

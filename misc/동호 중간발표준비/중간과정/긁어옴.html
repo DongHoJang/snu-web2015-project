@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+	<title>[CI 뉴스] - CodeIgniter 한국사용자포럼</title>
+	<!-- Meta -->
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="">
+	<meta name="description" content="CodeIgniter 한국사용자포럼, PHP Framework"/>
+	<meta name="keywords" content="CodeIgniter, 한국사용자포럼"/>
+
+	<!-- CSS Global Compulsory-->
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/plugins/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/css/style.css">
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/css/headers/header1.css">
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/css/responsive.css">
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/plugins/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/plugins/flexslider/flexslider.css">		
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/plugins/parallax-slider/css/parallax-slider.css">
+	<!-- CSS Theme -->	
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/css/themes/default.css" id="style_color">
+	<link rel="stylesheet" href="http://codeigniter-kr.org/include/assets/css/app.css">
+<!-- Login sp sheet -->
+
+	<!-- Custom Code -->
+	<link rel="image_src" href="/images/logo_ci1.png" />
+	<link href="http://codeigniter-kr.org/include/css/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
+
+<!-- JS Global Compulsory -->			
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/plugins/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/plugins/hover-dropdown.min.js"></script> 
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/plugins/back-to-top.js"></script>
+<!-- JS Implementing Plugins -->		   
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/plugins/parallax-slider/js/modernizr.js"></script>
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/plugins/parallax-slider/js/jquery.cslider.js"></script> 
+<!-- JS Page Level -->		   
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/js/app.js"></script>
+<script type="text/javascript" src="http://codeigniter-kr.org/include/assets/js/pages/index.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+	  	App.init();
+		App.initSliders();
+		Index.initParallaxSlider();
+	});
+</script>
+<!--[if lt IE 9]>
+	<script src="assets/plugins/respond.js"></script>
+<![endif]-->
+
+	
+	<script type="text/javascript" src="http://codeigniter-kr.org/include/js/common.js"></script>
+	<script type="text/javascript"  src="http://codeigniter-kr.org/include/js/jquery-ui-1.7.2.custom.min.js"></script>	
+	<script type="text/javascript" src="http://codeigniter-kr.org/include/js/jquery.framedialog.js"></script>
+	<script type="text/javascript" src="http://codeigniter-kr.org/include/js/jquery.jScale.js"></script>
+	<script type="text/javascript" src="http://codeigniter-kr.org/include/js/jquery.post.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#mainsearch_btn").click(function(){
+			if($("#mainq").val() == ''){
+				alert('검색어를 입력하세요');
+				return false;
+			} else {
+				var act = '/search/index/q/'+$("#mainq").val();
+				$("#main_search").attr('action', act).submit();
+			}
+		});
+		
+		$("input[name='mainq']").keyup(function(e) {
+			if (e.keyCode == 13) $("#mainsearch_btn").click();
+		});
+	});
+	</script>
+</head>	
+
+
+<body>
+
+<!--=== Top ===-->	
+<div class="top">
+	<div class="container">		 
+		<ul class="loginbar pull-right">
+		<!--
+			<li>
+				<i class="icon-globe"></i>
+				<a>Languages</a>
+				<ul class="lenguages">
+					<li class="active">
+						<a href="#">Korea <i class="icon-ok"></i></a> 
+					</li>
+				</ul>
+			</li>
+		-->
+
+		<li><a href='/auth/register'>회원가입</a></li>
+		<li class="devider"></li>
+		<li><a href='/auth/forgot_password'>아이디/비밀번호 찾기</a></li>
+		<li class="devider"></li>
+		<li><a href="/auth/login/eNortjK0sFLSz0stL9bPySwuKdYvSExP1TdUsgZcMG-6CEY.">로그인</a></li>
+		</ul>
+	</div>	  
+</div><!--/top-->
+<!--=== End Top ===-->	
+
+<!--=== Header ===-->	
+<div class="header">
+	<div class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">
+					<img id="logo-header" src="/images/logo_ci2.png" alt="Logo">
+				</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
+							CodeIgniter
+							<i class="icon-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/news/lists/page/1">CI 뉴스 및 다운로드</a></li>
+							<li><a href="/user_guide_2.1.0/">CI 한글매뉴얼(2.1.0)</a></li>
+							<li><a href="/user_guide172/">CI 한글매뉴얼(1.7.3)</a></li>
+							<li><a href="http://sample.cikorea.net">CI 실행예제 모음</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
+							포럼
+							<i class="icon-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+								<li><a href="/notice/lists/page/1">공지사항</a></li>
+								<li><a href="/free/lists/page/1">자유게시판</a></li>
+								<li><a href="/tip/lists/page/1">TIP게시판</a></li>
+								<li><a href="/lecture/lists/page/1">강좌게시판</a></li>
+								<li><a href="/qna/lists/page/1">CI 질문게시판</a></li>
+								<li><a href="/etc_qna/lists/page/1">CI외 질문게시판</a></li>
+								<li><a href="/job/lists/page/1">구인구직게시판</a></li>
+								<li><a href="/ci_make/lists/page/1">CI사이트 소개</a></li>
+								<li><a href="/ad/lists/page/1">광고,홍보게시판</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
+							자료실
+							<i class="icon-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+								<li><a href="/source/lists/page/1">CI 코드</a></li>
+								<li><a href="/file/lists/page/1">일반자료</a></li>
+								<li><a href="/source/view/289/page/2">포럼소스 다운받기</a></li>
+								<li><a href="/source/view/401/page/1">마냐님 공개보드 다운</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">
+							포럼참여
+							<i class="icon-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+								<li><a href="/ci/lists/page/1">포럼 개발자</a></li>
+								<li><a href="/su/lists/page/1">운영자게시판</a></li>
+						</ul>
+					</li>
+					<li class="hidden-sm"><a class="search"><i class="icon-search search-btn"></i></a></li>
+				</ul>
+				<div class="search-open">
+					<!-- //통합검색 기능추가 by emc (2009/08/19) -->
+					<form id="main_search" method="post" action="Search">
+					<div class="input-group">
+						<input name="mainq" id="mainq" class="form-control" placeholder="Search" value="">
+						<span class="input-group-btn">
+							<input class="btn-u" type="submit" id="mainsearch_btn" value="Go" class="searchbutton">
+						</span>
+					</div><!-- /input-group -->
+					</form>
+				</div>				
+			</div><!-- /navbar-collapse -->
+		</div>	
+	</div>	
+</div><!--/header-->
+<!--=== End Header ===-->
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-40">
+	<div class="container">
+		<h1 class="pull-left">CODEIGNITER</h1>
+		<ul class="pull-right breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li>CODEIGNITER</li>
+			<li class="active"><a href="/news/lists/page/1">news</a></li>
+		</ul>
+	</div>
+</div>
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part ===-->
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<!-- About Us -->
+			<div class="margin-bottom-30">
+				<!--<div class="headline"><h2>포럼</h2></div>-->
+				<ul class="list-group sidebar-nav-v1">
+						<li class="list-group-item active"><a href="/news/lists/page/1">CI 뉴스 및 다운로드</a></li>
+				</ul>
+
+				<ul class="list-group sidebar-nav-v1">
+					<li class="list-group-item"><a href="/user_guide_2.1.0/" target="_blank">CI 한글매뉴얼 (2.1.0)</a></li>
+					<li class="list-group-item"><a href="/user_guide172/" target="_blank">CI 한글매뉴얼 (1.7.3)</a></li>
+					<li class="list-group-item"><a href="http://sample.cikorea.net" target="_blank">CI 실행예제 모음</a></li>
+					<li class="list-group-item"><a href="/source/view/289/page/2">포럼소스 다운받기</a></li>
+					<li class="list-group-item"><a href="/source/view/401/page/1">마냐님 공개보드 다운받기</a></li>
+					<li class="list-group-item"><a href="/cibook/lists/page/1">만들면서 배우는 CodeIgniter Q&A</a></li>
+				</ul>
+
+			</div>
+
+			<!-- Posts -->
+			<div class="posts margin-bottom-30">
+				<div class="headline"><h2>배너</h2></div>
+				<div class="text-center">
+<script type="text/javascript" src="http://ad.ilikesponsorad.com/ad/ad.js?adImpMgrCode=9597&width=250&height=250"></script>
+<br>
+					<a href="http://blog.yes24.com/lib/adon/View.aspx?blogid=1207735&goodsno=9279248&idx=16720&ADON_TYPE=B&regs=b" onClick="_gaq.push(['_trackEvent', 'banner', 'click']);" target="_blank"><img src="/images/cibook.jpg" border="0"></a>
+				</div>
+
+			</div><!--/posts-->
+
+			<!-- Contact Us -->
+			<div class="who margin-bottom-30">
+				<div class="headline"><h2>Contact Us</h2></div>
+				<p>프로젝트 문의나 요청사항은 아래 이메일을 이용하세요.</p>
+				<ul class="list-unstyled">
+					<!--<li><a href="#"><i class="icon-home"></i>5B amus ED554, New York, US</a></li>-->
+					<li><a href="mailto:info@cikorea.net"><i class="icon-envelope-alt"></i>info@cikorea.net</a></li>
+					<!--<li><a href="#"><i class="icon-phone-sign"></i>1(222) 5x86 x97x</a></li>-->
+					<li><a href="#"><i class="icon-globe"></i>http://www.cikorea.net</a></li>
+				</ul>
+			</div>
+		</div><!--/col-md-3-->
+		<!-- Left Sidebar -->
+		
+    	<div class="col-md-9">
+<script type="text/javascript" src="http://codeigniter-kr.org/include/js/jquery.post.js"></script>
+<script>
+$(document).ready(function(){
+	$("#search_btn").click(function(){
+		var sfl_val = $("select[name='sfl'] option:selected").val();
+		if($("#q").val() == ''){
+			alert('검색어를 입력하세요');
+			return false;
+		} else {
+			var act = '/news/lists/q/'+$("#q").val()+'/sfl/'+sfl_val;
+			$("#bd_search").attr('action', act);
+			$("#bd_search").submit();
+		}
+	});
+});
+
+function board_search_enter() {
+	$("input[name='q']").keyup(function(e) {
+		if (e.keyCode == 13) $("#search_btn").click();
+	});
+}
+</script>
+
+    <!-- 검색 -->
+    <div class="row margin-bottom-20">
+        <div class="col-md-6"></div>
+<div class='media' style="text-align:center; ">
+<script type="text/javascript" src="http://ad.ilikesponsorad.com/ad/ad.js?adImpMgrCode=9598&width=728&height=90"></script>
+</div>
+        <div class="col-md-6">
+            <form id="bd_search" method="post">
+                                <div class="col-xs-4">
+                <select name="sfl" class="form-control">
+                                            <option value="subject" >제목</option>
+                                            <option value="contents" >내용</option>
+                                            <option value="all" >제목+내용</option>
+                                            <option value="user_id" >회원아이디</option>
+                                            <option value="user_name" >닉네임</option>
+                                    </select>
+                </div>
+                <div class="col-xs-6">
+                <input class="form-control" name="q" id="q" value="" onkeypress="board_search_enter();">
+                </div>
+                <div class="col-xs-2">
+                <button type="button" id="search_btn" class="btn btn-primary">검색</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- 검색 -->
+    <div class="panel panel-green margin-bottom-40">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i class="icon-tasks"></i> CI 뉴스</h3>
+        </div>
+
+        <table class="table">
+			<colgroup>
+				<col width="50" />
+				<col />
+				<col width="150" />
+				<col width="110" />
+				<col width="50" />
+				<col width="50" />
+			</colgroup>
+            <thead>
+            <tr>
+                <th class="text-center">번호</th>
+                <th class="text-center">제목</th>
+                <th class="text-center hidden-sm">글쓴이</th>
+                <th class="text-center">날짜</th>
+                <th class="text-center">조회</th>
+                <th class="text-center">추천</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">38</td>
+                <td><a href="/news/view/38/page/1/" title="http://forum.codeigniter.com/thread-890.html
+
+https://github.com/bcit-ci/CodeIgniter/archive/3.0rc.zip">The CodeIgniter 3.0 release ..</a> [5] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/kkh0114','m_send',400,500)">맥스</a></td>
+                <td class="text-center">2015-01-27</td>
+                <td class="text-center">3933</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">20</td>
+                <td><a href="/news/view/20/page/1/" title="목은 안 마르지만 우물은 팠습니다.
+
+html을 docx으로 변환한 것입니다. 기본 마진으로 출력하면 215매 나옵니다.
+마진 넓히고 출력하시면 될겁니다.
+
+이미지 파일까지 같이 압축했습니다.">ci 2.1.0 한글매뉴얼 doc 파일</a> [15] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/blumine','m_send',400,500)">웅파</a></td>
+                <td class="text-center">2011-12-16</td>
+                <td class="text-center">21943</td>
+                <td class="text-center">4</td>
+            </tr>
+                <tr>
+                <td class="text-center">18</td>
+                <td><a href="/news/view/18/page/1/" title="&nbsp;">2.1.0 버전</a> [3] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/blumine','m_send',400,500)">웅파</a></td>
+                <td class="text-center">2011-11-15</td>
+                <td class="text-center">25455</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">13</td>
+                <td><a href="/news/view/13/page/1/" title="8월 20일자..아래는 바뀐 내용과 버그픽스 내용입니다.">codeigniter 2.0.3 버전 올라왔네요.</a> [4] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/blumine','m_send',400,500)">웅파</a></td>
+                <td class="text-center">2011-08-22</td>
+                <td class="text-center">13324</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">11</td>
+                <td><a href="/news/view/11/page/1/" title="일본포럼에서 일본어로 번역한 매뉴얼을 구글번역기로 돌렸습니다.(영어-&gt;한글의 번역률보다 일어-&gt;한글의 번역률이 월등히 뛰어납니다)포럼에서 내용검수(수정후) 2.0.1 한글매뉴얼을 배포할 예정입니다.그전까지는 참고해서 작업하시기 바랍니다.감사합니다...">2.0.1 일본어 매뉴얼 번역판</a> [1] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/blumine','m_send',400,500)">웅파</a></td>
+                <td class="text-center">2011-04-04</td>
+                <td class="text-center">11573</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">10</td>
+                <td><a href="/news/view/10/page/1/" title="아래 링크에 포럼 회원님께서 각각 올려주신 1.7.3 -&gt; 2.0.1로 바뀐 점을 탱크님이 수집해주셨습니다.
+
+http://codeigniter-kr.org/source/view/512/page/1">2.0.1에서 바뀐 점</a> [0] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/blumine','m_send',400,500)">웅파</a></td>
+                <td class="text-center">2011-04-04</td>
+                <td class="text-center">12683</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">8</td>
+                <td><a href="/news/view/8/page/1/" title="드디어 2.0.0이 정식 릴리즈 되었네요...어이쿠야.. 지난 금요일에 릴리즈되었는데 너무 늦게 알았네요.벨리님의 포스팅으로 알게되었습니다. 캄사합니다.CI 뉴스에 좀더 심혈을 귀울여야겠습니다.상단왼쪽 불타오름을 누르셔도 되고용.. ">CodeIgniter 2.0.0 Released (..</a> [1] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/kangmin2z','m_send',400,500)">KangMin</a></td>
+                <td class="text-center">2011-01-31</td>
+                <td class="text-center">14284</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">6</td>
+                <td><a href="/news/view/6/page/1/" title="CodeIgniter 1.7.2 Security PatchA fix has been implemented for a security flaw in CodeIgniter 1.7.2.&nbsp; You may obtain the fix either by ..">1.7.2 보안패치</a> [1] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/blumine','m_send',400,500)">웅파</a></td>
+                <td class="text-center">2010-07-14</td>
+                <td class="text-center">13799</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">3</td>
+                <td><a href="/news/view/3/page/1/" title="codeigniter 1.7.2 버전입니다.">1.7.2 버전 다운로드</a> [2] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/blumine','m_send',400,500)">웅파</a></td>
+                <td class="text-center">2010-05-28</td>
+                <td class="text-center">8620</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">2</td>
+                <td><a href="/news/view/2/page/1/" title="v1.7.2가 릴리즈되었네요다운로드 :&nbsp;http://codeigniter.com/download.php변경사항 :&nbsp;http://codeigniter.com/user_guide/changelog.htm..">CodeIgniter v1.7.2 Released</a> [0] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/jois','m_send',400,500)">jois</a></td>
+                <td class="text-center">2009-09-12</td>
+                <td class="text-center">8374</td>
+                <td class="text-center">0</td>
+            </tr>
+                <tr>
+                <td class="text-center">1</td>
+                <td><a href="/news/view/1/page/1/" title="CodeIgniter의 최신 버전은 1.7.1입니다.기존 버전과 바뀐 점은 이곳을 참고하시기 바랍니다.">CodeIgniter 1.7.1 Released</a> [0] </td>
+                <td class="text-center hidden-sm"><a href="javascript:openWindowFrameless('/message/send/blumine','m_send',400,500)">웅파</a></td>
+                <td class="text-center">2009-07-19</td>
+                <td class="text-center">7661</td>
+                <td class="text-center">0</td>
+            </tr>
+                </tbody>
+        </table>
+    </div>
+
+
+    <div class="col-md-12 text-right">
+        <a href="/news/write/0"><button class="btn-u btn-u-sea">글쓰기</button></a>
+    </div>
+    <div class="col-md-12 text-center">
+        <ul class="pagination"><li><a href="http://codeigniter-kr.org/news/lists/page/1" title="Go to the first page" class="first_page">First</a></li>
+<li><a href="http://codeigniter-kr.org/news/lists/page/1" title="Go to the previous page" class="prev_page"><</a></li>
+<li class="active"><a href="http://codeigniter-kr.org/news/lists/page/1" title="Go to page 1" class="page class="active"">1</a></li>
+<li><a href="http://codeigniter-kr.org/news/lists/page/1" title="Go to the next page" class="next_page">></a></li>
+<li><a href="http://codeigniter-kr.org/news/lists/page/1" title="Go to the last page" class="last_page">Last</a></li>
+    </div>
+</div><!--/col-md-9 md-margin-bottom-60 -->
+
+</div><!--/row-->
+</div><!--/container-->	
+<!--=== Copyright ===-->
+<div class="copyright">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">						
+	            <p class="copyright-space">
+                    2009-2014 &copy; Codeigniter 한국사용자포럼. ALL Rights Reserved. 
+                </p>
+			</div>
+			<div class="col-md-6">	
+				<span class="pull-right" style="padding-top:10px;"><a href="mailto:info@cikorea.net">Contact Us</a></span>
+			</div>
+		</div><!--/row-->
+	</div><!--/container-->	
+</div><!--/copyright-->	
+<!--=== End Copyright ===-->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39825903-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>	
+
