@@ -414,8 +414,7 @@
 
 	<div class="clearfix"></div>
 	<br><br>
-	<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
-
+	
 	<div class="modal fade" id="events-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -459,14 +458,6 @@
 	<script type="text/javascript" src="js/calendar.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 
-	<script type="text/javascript">
-		var disqus_shortname = 'bootstrapcalendar'; // required: replace example with your forum shortname
-		(function() {
-			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		})();
-	</script>
 </div>
 
 
